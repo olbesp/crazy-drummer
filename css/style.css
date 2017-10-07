@@ -119,10 +119,12 @@ nav h1 {
 }
 
 .btn:focus { outline: none; }
-.btn:active {
+
+.pressed {
   background: #151515;
   border: 2px solid #f7ca00;
 }
+
 
 .hat1 { top: 30%; left: 30%; }
 .hat2 { top: 30%; left: 40%; }
