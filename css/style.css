@@ -4,35 +4,48 @@
 }
 
 body {
-  height: 100vh;
-  position: relative;
-  background: url("../img/drums.jpg"), #020202;
-  background-size: contain;
-  /*background-repeat: no-repeat;*/
-  background-position: center;
+  background:
+  radial-gradient(black 15%, transparent 16%) 0 0,
+  radial-gradient(black 15%, transparent 16%) 8px 8px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+  radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+  background-color:#282828;
+  background-size:16px 16px;
   color: #fff;
 }
+
+.wall {
+  position: relative;
+  height: 100vh;
+  background: url("../img/drums.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 
 nav {
   display: flex;
   position: absolute;
   top: 0;
   left: 0;
-  height: 50px;
+  z-index: 100;
+  height: 70px;
   width: 100%;
   background: #020202;
+  box-shadow: 0px 5px 20px #000;
 }
 
 nav h1 {
   margin-left: 5%;
-  margin-top: 10px;
+  margin-top: 24px;
+  font-family: 'Bangers', cursive;
 }
 /*-----------------------*/
 .menu-icon {
   width: 50px;
   height: 40px;
   position: relative;
-  margin: 10px 5% auto auto;
+  margin: 20px 5% auto auto;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   cursor: pointer;
@@ -89,6 +102,39 @@ nav h1 {
   left: 50%;
 }
 
+.btn {
+  display: inline-block;
+  position: absolute;
+  width: 55px;
+  height: 50px;
+  border: 0;
+  border-bottom: 4px solid #050505;
+  border-radius: 13px;
+  font-family: 'Unkempt', cursive;
+  font-size: 20px;
+  text-shadow: 2px 2px 1px #020202;
+  background: radial-gradient(circle at center, #454545 0, #232323, #151515 100%);
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:focus { outline: none; }
+.btn:active {
+  background: #151515;
+  border: 2px solid #f7ca00;
+}
+
+.hat1 { top: 30%; left: 30%; }
+.hat2 { top: 30%; left: 40%; }
+.hat3 { top: 30%; left: 50%; }
+.hat4 { top: 30%; left: 60%; }
+
+.stick { top: 45%; left: 30%; }
+.snare1 { top: 45%; left: 40%; }
+.snare2 { top: 45%; left: 50%; }
+.snare3 { top: 45%; left: 60%; }
+
+.kick { top: 60%; left: 45%; }
 
 
 footer {
@@ -99,5 +145,8 @@ footer {
      width:100%;
      padding-top: 15px;
   text-align: center;
+  font-family: 'Unkempt', cursive;
+  box-shadow: 0px -5px 20px #000;
+
   background: #020202;
 }
