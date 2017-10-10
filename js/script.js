@@ -17,8 +17,6 @@ $(document).ready(function(){
 		}
 	};
 
-	// Activate first button after reloading
-	$("#rock").addClass("pressed");
 
 	// Sounds library
 
@@ -141,7 +139,22 @@ $(document).ready(function(){
 		}
 	};
 
+	// Activate first button after reloading
+	$("#rock").addClass("pressed");
+	var genre;
+	if ($("#rock").hasClass("pressed")) {
+		genre = sounds.rock;
+	} else if ($("#hipHop").hasclass("pressed")) {
+		genre = sounds.hipHop;
+	} else if ($("#dance").hasClass("pressed")) {
+		genre = "dance";
+	} else {
+		genre = "dubstep";
+	};
+
 	// Unpress button after the key go up
+	var keyCodes = [87, 65, 83, 68, 73, 74, 75, 76, 32];
+
 	function unpressButton() {
 		$("body").keyup(function(event) {
 			for (var i = 0; i < keyCodes.length; i++) {
@@ -152,101 +165,76 @@ $(document).ready(function(){
 		});
 	}
 
-
-
-
-
-
-
-
-
 	// --W--
 	$("body").keydown(function(event) {
 		if (event.which === 87) {
-			$(".hat1").addClass("pressed");
-			sounds.dance.w.play();
+			$("#w").addClass("pressed");
+			genre.w.play();
 		}
+		unpressButton();
 	});
-
-	var keyCodes = [87, 65, 83, 68, 73, 74, 75, 76, 32];
-
-
-	//
-	// // Buttons
-	//
-	// // --W--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 87) {
-	// 		$(".hat1").addClass("pressed");
-	// 		hat1.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	// // --A--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 65) {
-	// 		$(".hat2").addClass("pressed");
-	// 		hat2.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	// // --S--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 83) {
-	// 		$(".hat3").addClass("pressed");
-	// 		hat3.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	// // --D--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 68) {
-	// 		$(".hat4").addClass("pressed");
-	// 		hat4.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	// // --I--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 73) {
-	// 		$(".stick").addClass("pressed");
-	// 		stick.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	// // --J--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 74) {
-	// 		$(".snare1").addClass("pressed");
-	// 		snare1.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	// // --K--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 75) {
-	// 		$(".snare2").addClass("pressed");
-	// 		snare2.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	// // --L--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 76) {
-	// 		$(".snare3").addClass("pressed");
-	// 		snare3.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	// // --SPACE--
-	// $("body").keydown(function(event) {
-	// 	if (event.which === 32) {
-	// 		$(".kick").addClass("pressed");
-	// 		kick.play();
-	// 	}
-	// 	unpressButton();
-	// });
-	//
-
-
+	// --A--
+	$("body").keydown(function(event) {
+		if (event.which === 65) {
+			$("#a").addClass("pressed");
+			genre.a.play();
+		}
+		unpressButton();
+	});
+	// --S--
+	$("body").keydown(function(event) {
+		if (event.which === 83) {
+			$("#s").addClass("pressed");
+			genre.s.play();
+		}
+		unpressButton();
+	});
+	// --D--
+	$("body").keydown(function(event) {
+		if (event.which === 68) {
+			$("#d").addClass("pressed");
+			genre.d.play();
+		}
+		unpressButton();
+	});
+	// --I--
+	$("body").keydown(function(event) {
+		if (event.which === 73) {
+			$("#i").addClass("pressed");
+			genre.i.play();
+		}
+		unpressButton();
+	});
+	// --J--
+	$("body").keydown(function(event) {
+		if (event.which === 74) {
+			$("#j").addClass("pressed");
+			genre.j.play();
+		}
+		unpressButton();
+	});
+	// --K--
+	$("body").keydown(function(event) {
+		if (event.which === 75) {
+			$("#k").addClass("pressed");
+			genre.k.play();
+		}
+		unpressButton();
+	});
+	// --L--
+	$("body").keydown(function(event) {
+		if (event.which === 76) {
+			$("#l").addClass("pressed");
+			genre.l.play();
+		}
+		unpressButton();
+	});
+	// --SPACE--
+	$("body").keydown(function(event) {
+		if (event.which === 32) {
+			$("#space").addClass("pressed");
+			genre.space.play();
+		}
+		unpressButton();
+	});
 });
