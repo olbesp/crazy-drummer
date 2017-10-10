@@ -1,6 +1,26 @@
 $(document).ready(function(){
 
-	// Sounds
+	// Mobile menu
+	$(".menu-icon").click(function(){
+		$(this).toggleClass("open");
+    $(".menu").slideToggle();
+	});
+
+	// Menu Buttons
+	var buttons = $(".menu-btn");
+	for (var i = 0; i < buttons.length; i++) {
+		if (!$(buttons[i]).hasClass("pressed")) {
+			$(buttons[i]).click(function() {
+				$(buttons).removeClass("pressed");
+				$(this).addClass("pressed");
+			});
+		}
+	};
+
+	// Activate first button after reloading
+	$("#rock").addClass("pressed");
+
+	// Sounds library
 
 	var sounds = {
 		rock: {
@@ -121,6 +141,25 @@ $(document).ready(function(){
 		}
 	};
 
+	// Unpress button after the key go up
+	function unpressButton() {
+		$("body").keyup(function(event) {
+			for (var i = 0; i < keyCodes.length; i++) {
+				if (event.which == keyCodes[i]) {
+					$(".btn").removeClass("pressed");
+				}
+			}
+		});
+	}
+
+
+
+
+
+
+
+
+
 	// --W--
 	$("body").keydown(function(event) {
 		if (event.which === 87) {
@@ -131,15 +170,7 @@ $(document).ready(function(){
 
 	var keyCodes = [87, 65, 83, 68, 73, 74, 75, 76, 32];
 
-	function unpressButton() {
-		$("body").keyup(function(event) {
-			for (var i = 0; i < keyCodes.length; i++) {
-				if (event.which == keyCodes[i]) {
-					$(".btn").removeClass("pressed");
-				}
-			}
-		});
-	}
+
 	//
 	// // Buttons
 	//
@@ -216,25 +247,6 @@ $(document).ready(function(){
 	// 	unpressButton();
 	// });
 	//
-	// // Mobile menu
-	//
-	// $(".menu-icon").click(function(){
-	// 	$(this).toggleClass("open");
-  //   $(".menu").slideToggle();
-	// });
 
-	// Menu Buttons
-
-	// var buttons = $(".menu-btn");
-	//
-	// for (var i = 0; i < buttons.length; i++) {
-	// 	if ($(buttons[i]).hasClass("pressed") == false) {
-	// 		$(buttons[i]).click(function() {
-	// 			$(buttons).removeClass("pressed");
-	// 			$(this).addClass("pressed");
-	// 		});
-	// 	}
-	//
-	// };
 
 });
