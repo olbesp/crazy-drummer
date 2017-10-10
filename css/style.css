@@ -180,3 +180,17 @@ footer a {
   text-decoration: none;
   color: #fff;
 }
+/*-------------------------------------------------------------*/
+/*Style for mobile devices*/
+/*-----------------------------------------------------------*/
+@media only screen and (max-width: 650px) {
+  nav h1 {
+    font-size: 26px;
+    margin-top: 22px;
+  }
+
+  #w, #i { left: 15%; }
+  #a, #j { left: 35%; }
+  #s, #k { left: 55%; }
+  #d, #l { left: 75%; }
+}
