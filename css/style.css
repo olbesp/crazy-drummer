@@ -151,17 +151,17 @@ nav h1 {
   border: 2px solid #f7ca00;
 }
 
-.hat1 { top: 30%; left: 30%; }
-.hat2 { top: 30%; left: 40%; }
-.hat3 { top: 30%; left: 50%; }
-.hat4 { top: 30%; left: 60%; }
+#w { top: 30%; left: 30%; }
+#a { top: 30%; left: 40%; }
+#s { top: 30%; left: 50%; }
+#d { top: 30%; left: 60%; }
 
-.stick { top: 45%; left: 30%; }
-.snare1 { top: 45%; left: 40%; }
-.snare2 { top: 45%; left: 50%; }
-.snare3 { top: 45%; left: 60%; }
+#i { top: 45%; left: 30%; }
+#j { top: 45%; left: 40%; }
+#k { top: 45%; left: 50%; }
+#l { top: 45%; left: 60%; }
 
-.kick { top: 60%; left: 45%; }
+#space { top: 60%; left: 45%; }
 
 footer {
   position:fixed;

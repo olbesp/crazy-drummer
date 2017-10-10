@@ -128,45 +128,18 @@ $(document).ready(function(){
 			sounds.dance.w.play();
 		}
 	});
-	// var hat1 = new Howl({
-	// 	src: ["sounds/a/hat1.mp3"]
-	// });
-	// var hat2 = new Howl({
-	// 	src: ["sounds/a/hat2.mp3"]
-	// });
-	// var hat3 = new Howl({
-	// 	src: ["sounds/a/hat3.mp3"]
-	// });
-	// var hat4 = new Howl({
-	// 	src: ["sounds/a/hat4.mp3"]
-	// });
-	// var stick = new Howl({
-	// 	src: ["sounds/a/stick.mp3"]
-	// });
-	// var snare1 = new Howl({
-	// 	src: ["sounds/a/snare1.mp3"]
-	// });
-	// var snare2 = new Howl({
-	// 	src: ["sounds/a/snare2.mp3"]
-	// });
-	// var snare3 = new Howl({
-	// 	src: ["sounds/a/snare3.mp3"]
-	// });
-	// var kick = new Howl({
-	// 	src: ["sounds/a/kick.mp3"]
-	// });
-	//
-	// var keyCodes = [87, 65, 83, 68, 73, 74, 75, 76, 32];
-	//
-	// function unpressButton() {
-	// 	$("body").keyup(function(event) {
-	// 		for (var i = 0; i < keyCodes.length; i++) {
-	// 			if (event.which == keyCodes[i]) {
-	// 				$(".btn").removeClass("pressed");
-	// 			}
-	// 		}
-	// 	});
-	// }
+
+	var keyCodes = [87, 65, 83, 68, 73, 74, 75, 76, 32];
+
+	function unpressButton() {
+		$("body").keyup(function(event) {
+			for (var i = 0; i < keyCodes.length; i++) {
+				if (event.which == keyCodes[i]) {
+					$(".btn").removeClass("pressed");
+				}
+			}
+		});
+	}
 	//
 	// // Buttons
 	//
