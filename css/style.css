@@ -13,6 +13,7 @@ body {
   background: url("../img/drums.jpg");
   background-size: cover;
   background-position: center;
+
 }
 
 
@@ -28,13 +29,46 @@ nav {
   box-shadow: 0px 5px 20px #000;
 }
 
+.menu {
+  display: none;
+  position: absolute;
+  top: 71px;
+  right: 0;
+  list-style: none;
+  background: linear-gradient(#505050, #020202);
+  box-shadow: 0 5px 10px #000;
+}
+.menu-btn {
+  width: 70px;
+  padding: 10px 0;
+  margin: 10px 50px;
+  border: 0;
+  border-bottom: 4px solid #050505;
+  font-family: 'Unkempt', cursive;
+  text-shadow: 2px 2px 1px #020202;
+  background: radial-gradient(circle at center, #454545 0, #232323, #151515 100%);
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-btn:focus { outline: none; }
+
+.menu-item a {
+  text-decoration: none;
+  color: #fff;
+}
+
 nav h1 {
   margin-left: 5%;
-  margin-top: 24px;
+  margin-top: 16px;
+  text-align: center;
+  font-size: 38px;
   font-family: 'Bangers', cursive;
 }
 /*-----------------------*/
 .menu-icon {
+  display: inline-block;
+  float: right;
   width: 50px;
   height: 40px;
   position: relative;

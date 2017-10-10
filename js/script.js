@@ -124,4 +124,18 @@ $(document).ready(function(){
     $(".menu").slideToggle();
 	});
 
+	// Menu Buttons
+
+	// var buttons = $(".menu-btn");
+	//
+	// for (var i = 0; i < buttons.length; i++) {
+	// 	if ($(buttons[i]).hasClass("pressed") == false) {
+	// 		$(buttons[i]).click(function() {
+	// 			$(buttons).removeClass("pressed");
+	// 			$(this).addClass("pressed");
+	// 		});
+	// 	}
+	//
+	// };
+
 });
