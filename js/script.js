@@ -141,16 +141,22 @@ $(document).ready(function(){
 
 	// Activate first button after reloading
 	$("#rock").addClass("pressed");
+
+	// Checks current active genre in menu
 	var genre;
-	if ($("#rock").hasClass("pressed")) {
-		genre = sounds.rock;
-	} else if ($("#hipHop").hasclass("pressed")) {
-		genre = sounds.hipHop;
-	} else if ($("#dance").hasClass("pressed")) {
-		genre = "dance";
-	} else {
-		genre = "dubstep";
-	};
+
+	function checkMode() {
+		if ($("#rock").hasClass("pressed")) {
+			genre = "rock";
+		} else if ($("#hipHop").hasClass("pressed")) {
+			genre = "hipHop";
+		} else if ($("#dance").hasClass("pressed")) {
+			genre = "dance";
+		} else {
+			genre = "dubstep";
+		};
+		return genre;
+	}
 
 	// Unpress button after the key go up
 	var keyCodes = [87, 65, 83, 68, 73, 74, 75, 76, 32];
@@ -169,7 +175,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 87) {
 			$("#w").addClass("pressed");
-			genre.w.play();
+			checkMode();
+			sounds[genre].w.play();
 		}
 		unpressButton();
 	});
@@ -177,7 +184,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 65) {
 			$("#a").addClass("pressed");
-			genre.a.play();
+			checkMode();
+			sounds[genre].a.play();
 		}
 		unpressButton();
 	});
@@ -185,7 +193,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 83) {
 			$("#s").addClass("pressed");
-			genre.s.play();
+			checkMode();
+			sounds[genre].s.play();
 		}
 		unpressButton();
 	});
@@ -193,7 +202,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 68) {
 			$("#d").addClass("pressed");
-			genre.d.play();
+			checkMode();
+			sounds[genre].d.play();
 		}
 		unpressButton();
 	});
@@ -201,7 +211,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 73) {
 			$("#i").addClass("pressed");
-			genre.i.play();
+			checkMode();
+			sounds[genre].i.play();
 		}
 		unpressButton();
 	});
@@ -209,7 +220,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 74) {
 			$("#j").addClass("pressed");
-			genre.j.play();
+			checkMode();
+			sounds[genre].j.play();
 		}
 		unpressButton();
 	});
@@ -217,7 +229,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 75) {
 			$("#k").addClass("pressed");
-			genre.k.play();
+			checkMode();
+			sounds[genre].k.play();
 		}
 		unpressButton();
 	});
@@ -225,7 +238,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 76) {
 			$("#l").addClass("pressed");
-			genre.l.play();
+			checkMode();
+			sounds[genre].l.play();
 		}
 		unpressButton();
 	});
@@ -233,7 +247,8 @@ $(document).ready(function(){
 	$("body").keydown(function(event) {
 		if (event.which === 32) {
 			$("#space").addClass("pressed");
-			genre.space.play();
+			checkMode();
+			sounds[genre].space.play();
 		}
 		unpressButton();
 	});
