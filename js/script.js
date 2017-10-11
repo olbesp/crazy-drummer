@@ -58,6 +58,10 @@ $(document).ready(function(){
 
 	// Sounds library
 
+	var glass = new Howl({
+		src: ["sounds/glass.mp3"]
+	});
+
 	var sounds = {
 		rock: {
 			w: new Howl({
@@ -201,13 +205,16 @@ $(document).ready(function(){
 
 	function unpressButton() {
 		$("body").keyup(function(event) {
-			for (var i = 0; i < keyCodes.length; i++) {
-				if (event.which == keyCodes[i]) {
-					$(".btn").removeClass("pressed");
-				}
+			if (keyCodes.indexOf(event.which) >= 0) {
+				$(".btn").removeClass("pressed");
+			} else {
+				$(".glass").css("display", "inline-block");
+				glass.play();
+				glass = null;
 			}
 		});
 	}
+
 
 	// --W--
 	$("body").keydown(function(event) {
@@ -291,4 +298,9 @@ $(document).ready(function(){
 		}
 		unpressButton();
 	});
+
+	// Break all
+	// $("body").keydown(function(event) {
+	// 	if (event.whick === )
+	// });
 });
