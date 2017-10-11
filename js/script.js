@@ -1,7 +1,8 @@
 $(document).ready(function(){
 
 	// Buttons animation
-	// $("#w").addClass("animated bounceInUp")
+	// $("#w").addClass("animated bounceInLeft");
+	// $()
 
 	// Mobile menu
 	$(".menu-icon").click(function(){

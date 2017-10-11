@@ -152,16 +152,16 @@ nav h1 {
 }
 
 #w { top: 30%; left: 30%; }
-#a { top: 30%; left: 40%; }
-#s { top: 30%; left: 50%; }
-#d { top: 30%; left: 60%; }
+#a { top: 45%; left: 20%; }
+#s { top: 45%; left: 30%; }
+#d { top: 45%; left: 40%; }
 
-#i { top: 45%; left: 30%; }
-#j { top: 45%; left: 40%; }
-#k { top: 45%; left: 50%; }
-#l { top: 45%; left: 60%; }
+#i { top: 30%; right: 30%; }
+#j { top: 45%; right: 40%; }
+#k { top: 45%; right: 30%; }
+#l { top: 45%; right: 20%; }
 
-#space { top: 60%; left: 45%; }
+#space { width: 10%; top: 70%; left: 45%; }
 
 footer {
   position:fixed;
@@ -189,8 +189,11 @@ footer a {
     margin-top: 22px;
   }
 
-  #w, #i { left: 15%; }
-  #a, #j { left: 35%; }
-  #s, #k { left: 55%; }
-  #d, #l { left: 75%; }
+  .btn {
+    width: 35px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  footer { font-size: 80%; }
 }
