@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+	// Buttons animation
+	// $("#w").addClass("animated bounceInUp")
+
 	// Mobile menu
 	$(".menu-icon").click(function(){
 		$(this).toggleClass("open");
@@ -180,6 +183,7 @@ $(document).ready(function(){
 		}
 		unpressButton();
 	});
+
 	// --A--
 	$("body").keydown(function(event) {
 		if (event.which === 65) {
