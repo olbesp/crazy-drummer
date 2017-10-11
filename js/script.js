@@ -1,8 +1,42 @@
 $(document).ready(function(){
 
 	// Buttons animation
-	// $("#w").addClass("animated bounceInLeft");
-	// $()
+	$("#w").delay(300).queue(function(next) {
+		$(this).addClass("animated bounceInDown");
+		next();
+	});
+	$("#i").delay(300).queue(function(next) {
+		$(this).addClass("animated bounceInDown");
+		next();
+	});
+	$("#a").delay(600).queue(function(next) {
+		$(this).addClass("animated bounceInLeft");
+		next();
+	});
+	$("#l").delay(600).queue(function(next) {
+		$(this).addClass("animated bounceInRight");
+		next();
+	});
+	$("#s").delay(900).queue(function(next) {
+		$(this).addClass("animated rotateIn");
+		next();
+	});
+	$("#k").delay(900).queue(function(next) {
+		$(this).addClass("animated rotateIn");
+		next();
+	});
+	$("#d").delay(1200).queue(function(next) {
+		$(this).addClass("animated jackInTheBox");
+		next();
+	});
+	$("#j").delay(1200).queue(function(next) {
+		$(this).addClass("animated jackInTheBox");
+		next();
+	});
+	$("#space").delay(300).queue(function(next) {
+		$(this).addClass("animated wobble");
+		next();
+	});
 
 	// Mobile menu
 	$(".menu-icon").click(function(){

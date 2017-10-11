@@ -5,6 +5,7 @@
 
 body {
   color: #fff;
+  overflow: hidden;
 }
 
 .wall {
@@ -162,6 +163,12 @@ nav h1 {
 #l { top: 45%; right: 20%; }
 
 #space { width: 10%; top: 70%; left: 45%; }
+/*------------------------------------------------------------*/
+/*Animate buttons*/
+/*------------------------------------------------------------*/
+.btn { opacity: 0; }
+.btn.animated { opacity: 1; }
+
 
 footer {
   position:fixed;
