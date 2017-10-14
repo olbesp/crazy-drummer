@@ -200,107 +200,38 @@ $(document).ready(function(){
 		return genre;
 	}
 
+	var codeDetails = [
+		{"id": "#w", "sound": "w", "keyCode": 87},
+		{"id": "#a", "sound": "a", "keyCode": 65},
+		{"id": "#s", "sound": "s", "keyCode": 83},
+		{"id": "#d", "sound": "d", "keyCode": 68},
+		{"id": "#i", "sound": "i", "keyCode": 73},
+		{"id": "#j", "sound": "j", "keyCode": 74},
+		{"id": "#k", "sound": "k", "keyCode": 75},
+		{"id": "#l", "sound": "l", "keyCode": 76},
+		{"id": "#space", "sound": "space", "keyCode": 32}
+	];
+
+	$("body").keydown(function(event) {
+		for (var i = 0; i < codeDetails.length; i++) {
+			var item = codeDetails[i];
+			if (event.which == item["keyCode"]) {
+				$(item["id"]).addClass("pressed");
+				checkMode();
+				sounds[genre][item["sound"]].play();
+			}
+		}
+	});
+
 	// Unpress button after the key go up
 	var keyCodes = [87, 65, 83, 68, 73, 74, 75, 76, 32];
-
-	function unpressButton() {
-		$("body").keyup(function(event) {
-			if (keyCodes.indexOf(event.which) >= 0) {
-				$(".btn").removeClass("pressed");
-			} else {
-				$(".glass").css("display", "inline-block");
-				glass.play();
-				glass = null;
-			}
-		});
-	}
-
-
-	// --W--
-	$("body").keydown(function(event) {
-		if (event.which === 87) {
-			$("#w").addClass("pressed");
-			checkMode();
-			sounds[genre].w.play();
+	$("body").keyup(function(event) {
+		if (keyCodes.indexOf(event.which) >= 0) {
+			$(".btn").removeClass("pressed");
+		} else {
+			$(".glass").css("display", "inline-block");
+			glass.play();
+			glass = null;
 		}
-		unpressButton();
-	});
-
-	// --A--
-	$("body").keydown(function(event) {
-		if (event.which === 65) {
-			$("#a").addClass("pressed");
-			checkMode();
-			sounds[genre].a.play();
-		}
-		unpressButton();
-	});
-	// --S--
-	$("body").keydown(function(event) {
-		if (event.which === 83) {
-			$("#s").addClass("pressed");
-			checkMode();
-			sounds[genre].s.play();
-		}
-		unpressButton();
-	});
-	// --D--
-	$("body").keydown(function(event) {
-		if (event.which === 68) {
-			$("#d").addClass("pressed");
-			checkMode();
-			sounds[genre].d.play();
-		}
-		unpressButton();
-	});
-	// --I--
-	$("body").keydown(function(event) {
-		if (event.which === 73) {
-			$("#i").addClass("pressed");
-			checkMode();
-			sounds[genre].i.play();
-		}
-		unpressButton();
-	});
-	// --J--
-	$("body").keydown(function(event) {
-		if (event.which === 74) {
-			$("#j").addClass("pressed");
-			checkMode();
-			sounds[genre].j.play();
-		}
-		unpressButton();
-	});
-	// --K--
-	$("body").keydown(function(event) {
-		if (event.which === 75) {
-			$("#k").addClass("pressed");
-			checkMode();
-			sounds[genre].k.play();
-		}
-		unpressButton();
-	});
-	// --L--
-	$("body").keydown(function(event) {
-		if (event.which === 76) {
-			$("#l").addClass("pressed");
-			checkMode();
-			sounds[genre].l.play();
-		}
-		unpressButton();
-	});
-	// --SPACE--
-	$("body").keydown(function(event) {
-		if (event.which === 32) {
-			$("#space").addClass("pressed");
-			checkMode();
-			sounds[genre].space.play();
-		}
-		unpressButton();
-	});
-
-	// Break all
-	// $("body").keydown(function(event) {
-	// 	if (event.whick === )
-	// });
+	});	
 });
