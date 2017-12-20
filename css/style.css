@@ -31,14 +31,20 @@ nav {
 }
 
 .menu {
-  display: none;
+  transform: translateX(100%);
   position: absolute;
   top: 71px;
   right: 0;
   list-style: none;
   background: linear-gradient(#3e3c60, #0a0921);
   box-shadow: 0 5px 10px #000;
+  transition: transform .3s;
 }
+
+.menu-open {
+  transform: translateX(0);
+}
+
 .menu-btn {
   width: 70px;
   padding: 10px 0;
@@ -153,17 +159,17 @@ nav h1 {
   border: 2px solid #f7ca00;
 }
 
-#w { top: 30%; left: 30%; }
-#a { top: 45%; left: 20%; }
-#s { top: 45%; left: 30%; }
-#d { top: 45%; left: 40%; }
+#hat1 { top: 30%; left: 30%; }
+#hat2 { top: 45%; left: 20%; }
+#hat3 { top: 45%; left: 30%; }
+#hat4 { top: 45%; left: 40%; }
 
-#i { top: 30%; right: 30%; }
-#j { top: 45%; right: 40%; }
-#k { top: 45%; right: 30%; }
-#l { top: 45%; right: 20%; }
+#stick { top: 30%; right: 30%; }
+#snare1 { top: 45%; right: 40%; }
+#snare2 { top: 45%; right: 30%; }
+#snare3 { top: 45%; right: 20%; }
 
-#space { width: 10%; top: 70%; left: 45%; }
+#kick { width: 10%; top: 70%; left: 45%; }
 /*------------------------------------------------------------*/
 /*Animate buttons*/
 /*------------------------------------------------------------*/
