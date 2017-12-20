@@ -1,42 +1,60 @@
-$(document).ready(function(){
 
-	// Buttons animation
-	$("#w").delay(300).queue(function(next) {
-		$(this).addClass("animated bounceInDown");
-		next();
-	});
-	$("#i").delay(300).queue(function(next) {
-		$(this).addClass("animated bounceInDown");
-		next();
-	});
-	$("#a").delay(600).queue(function(next) {
-		$(this).addClass("animated bounceInLeft");
-		next();
-	});
-	$("#l").delay(600).queue(function(next) {
-		$(this).addClass("animated bounceInRight");
-		next();
-	});
-	$("#s").delay(900).queue(function(next) {
-		$(this).addClass("animated rotateIn");
-		next();
-	});
-	$("#k").delay(900).queue(function(next) {
-		$(this).addClass("animated rotateIn");
-		next();
-	});
-	$("#d").delay(1200).queue(function(next) {
-		$(this).addClass("animated jackInTheBox");
-		next();
-	});
-	$("#j").delay(1200).queue(function(next) {
-		$(this).addClass("animated jackInTheBox");
-		next();
-	});
-	$("#space").delay(300).queue(function(next) {
-		$(this).addClass("animated wobble");
-		next();
-	});
+var dataController = (function() {
+
+	var animatedClasses = [
+		'bounceIn',
+		'bounceInDown',
+		'bounceInLeft',
+		'bounceInRight',
+		'rotateIn',
+		'jackInTheBox',
+		'wobble',
+		'zoomInLeft',
+		'rollIn'
+	];
+
+	return {
+
+		getAnimationClasses: function() {
+			return animatedClasses;
+		}
+	}
+})();
+
+var UIController = (function() {
+
+	return {
+
+		addRandomAnimation: function(listOfElements, listOfClasses) {
+			// Iterate through elements and add random class into every one
+			for (var i = 0; i < listOfElements.length; i++) {
+				var randomClass = Math.floor(Math.random() * listOfClasses.length);
+				listOfElements[i].classList.add('animated', listOfClasses[randomClass]);
+			}
+		}
+
+	}
+})();
+
+var controller = (function(dataCtrl, UICtrl) {
+
+	var btnList = document.querySelectorAll('.drum-btn');
+
+	return {
+
+		init: function() {
+			var animation = dataCtrl.getAnimationClasses();
+			UICtrl.addRandomAnimation(btnList, animation);
+		}
+		
+	}
+
+})(dataController, UIController);
+
+controller.init();
+
+
+$(document).ready(function(){
 
 	// Mobile menu
 	$(".menu-icon").click(function(){
