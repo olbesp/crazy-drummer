@@ -13,21 +13,47 @@ var dataController = (function() {
 		'rollIn'
 	];
 
-	var DrumBtn = function() {
+	var DrumBtn = function(id, keyCode) {
 		this.id = id;
-		this.genre = genre;
 		this.keyCode = keyCode;
-		this.sound = new Howl({
-			src: [
-				'sounds/' + this.genre + '/' + this.id + '.mp3',
-				'sounds/' + this.genre + '/' + this.id + '.ogg']
-		});
+	}
+
+	var Genre = function(name) {
+		this.name = name;
+		// this.sound = new Howl({
+		// 	src: [
+		// 		'sounds/' + this.genre + '/' + this.id + '.mp3',
+		// 		'sounds/' + this.genre + '/' + this.id + '.ogg']
+		// });
+	}
+
+	var genres = {
+		rock: new Genre('rock'),
+		hipHop: new Genre('hipHop'),
+		dance: new Genre('dance'),
+		dubstep: new Genre('dubstep')
+	}
+
+	var drumBtns = {
+		w: new DrumBtn('hat1', 87),
+		a: new DrumBtn('hat2', 65),
+		s: new DrumBtn('hat3', 83),
+		d: new DrumBtn('hat4', 68),
+		i: new DrumBtn('stick', 73),
+		j: new DrumBtn('snare1', 74),
+		k: new DrumBtn('snare2', 75),
+		l: new DrumBtn('snare3', 76),
+		space: new DrumBtn('kick', 32)
 	}
 
 	return {
 
 		getAnimationClasses: function() {
 			return animatedClasses;
+		}
+
+		setupDrums: function() {
+			return drumsBtns;
 		}
 	}
 })();
