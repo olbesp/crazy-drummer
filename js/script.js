@@ -1,6 +1,29 @@
 
 var dataController = (function() {
 
+	var DrumBtn = function(id, keyCode) {
+		this.id = id;
+		this.keyCode = keyCode;
+		this.genre = 'rock';
+		this.sound = new Howl({
+			src: [
+				'sounds/' + this.genre + '/' + this.id + '.mp3',
+				'sounds/' + this.genre + '/' + this.id + '.ogg']
+		});
+	};
+
+	var drumBtns = [
+		new DrumBtn('hat1', 87),
+		new DrumBtn('hat2', 65),
+		new DrumBtn('hat3', 83),
+		new DrumBtn('hat4', 68),
+		new DrumBtn('stick', 73),
+		new DrumBtn('snare1', 74),
+		new DrumBtn('snare2', 75),
+		new DrumBtn('snare3', 76),
+		new DrumBtn('kick', 32)
+	];
+
 	var animatedClasses = [
 		'bounceIn',
 		'bounceInDown',
@@ -13,50 +36,10 @@ var dataController = (function() {
 		'rollIn'
 	];
 
-	var DrumBtn = function(id, keyCode) {
-		this.id = id;
-		this.keyCode = keyCode;
-
-	}
-
-	var Genre = function(name) {
-		this.name = name;
-		this.selectGenre = function() {
-			return DrumBtn.prototype.sound = new Howl({
-				src: [
-					'sounds/' + this.name + '/' + DrumBtn.prototype.id + '.mp3',
-					'sounds/' + this.name + '/' + DrumBtn.prototype.id + '.ogg']
-			});
-		}
-	}
-
-	var genres = {
-		rock: new Genre('rock'),
-		hipHop: new Genre('hipHop'),
-		dance: new Genre('dance'),
-		dubstep: new Genre('dubstep')
-	}
-
-	var drumBtns = {
-		w: new DrumBtn('hat1', 87),
-		a: new DrumBtn('hat2', 65),
-		s: new DrumBtn('hat3', 83),
-		d: new DrumBtn('hat4', 68),
-		i: new DrumBtn('stick', 73),
-		j: new DrumBtn('snare1', 74),
-		k: new DrumBtn('snare2', 75),
-		l: new DrumBtn('snare3', 76),
-		space: new DrumBtn('kick', 32)
-	}
-
 	return {
 
 		getAnimationClasses: function() {
 			return animatedClasses;
-		},
-
-		getGenres: function() {
-			return genres;
 		},
 
 		setupDrums: function() {
@@ -84,22 +67,38 @@ var controller = (function(dataCtrl, UICtrl) {
 
 	var btnList = document.querySelectorAll('.drum-btn');
 	var drums = dataCtrl.setupDrums();
-	var genres = dataCtrl.getGenres();
+	var genre;
 
 	var setupEventListeners = function() {
+
 		document.addEventListener('keydown', function(event) {
-			if (event.keyCode === 87 || event.which === 87) {
-				genres.rock.selectGenre();
-				drums.w.sound.play();
+			var isDrum = drums.some(function(drum) {
+				return drum.keyCode === event.keyCode;
+			});
+
+			if (isDrum) {
+				for (var i = 0; i < drums.length; i++) {
+					if (drums[i].keyCode === event.keyCode) {
+						drums[i].sound.play();
+					}
+				}
 			}
 		});
 
-		// Mobile menu
+		// MENU
 		document.querySelector('.menu-icon').addEventListener('click',
-			function(){
-				this.classList.toggle("open");
-		  	document.querySelector('.menu').classList.toggle('menu-open');
-			});
+		function(){
+			this.classList.toggle("open");
+	  	document.querySelector('.menu').classList.toggle('menu-open');
+		});
+
+		// GENRES
+		document.querySelector('.menu').addEventListener('click', function(event) {
+
+			if (event.target.id) {
+				genre = event.target.id;
+			}
+		});
 	}
 
 	return {
@@ -108,7 +107,7 @@ var controller = (function(dataCtrl, UICtrl) {
 			var animation = dataCtrl.getAnimationClasses();
 			UICtrl.addRandomAnimation(btnList, animation);
 			setupEventListeners();
-			// console.log(drums);
+			console.log(drums);
 		}
 
 	}
