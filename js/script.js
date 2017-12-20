@@ -13,6 +13,17 @@ var dataController = (function() {
 		'rollIn'
 	];
 
+	var DrumBtn = function() {
+		this.id = id;
+		this.genre = genre;
+		this.keyCode = keyCode;
+		this.sound = new Howl({
+			src: [
+				'sounds/' + this.genre + '/' + this.id + '.mp3',
+				'sounds/' + this.genre + '/' + this.id + '.ogg']
+		});
+	}
+
 	return {
 
 		getAnimationClasses: function() {
@@ -46,7 +57,7 @@ var controller = (function(dataCtrl, UICtrl) {
 			var animation = dataCtrl.getAnimationClasses();
 			UICtrl.addRandomAnimation(btnList, animation);
 		}
-		
+
 	}
 
 })(dataController, UIController);
