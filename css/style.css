@@ -59,13 +59,31 @@ body {
       justify-content: center;
       flex: 0 0 55%; }
 
+.img-effect {
+  display: none; }
+
+.wall {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 75vh; }
+  .wall__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex: 0 0 50%; }
+  .wall__row {
+    justify-content: center; }
+
 .footer {
   font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: .5rem 0; }
+  padding: .5rem 0;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
   .footer a {
     text-decoration: none;
     color: inherit; }

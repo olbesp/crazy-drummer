@@ -32,17 +32,33 @@
       </ul>
     </nav>
 
+    <div class="img-effect">
+      <img class="img-effect__glass" src="img/glass.png" alt="Broken glass">
+    </div>
 
     <main class="wall">
-      <img class="glass-img" src="img/glass.png" alt="Broken glass">
-      <button class="drum-btn" id="hat1" type="button" name="button">W</button>
-      <button class="drum-btn" id="hat2" type="button" name="button">A</button>
-      <button class="drum-btn" id="hat3" type="button" name="button">S</button>
-      <button class="drum-btn" id="hat4" type="button" name="button">D</button>
-      <button class="drum-btn" id="stick" type="button" name="button">I</button>
-      <button class="drum-btn" id="snare1" type="button" name="button">J</button>
-      <button class="drum-btn" id="snare2" type="button" name="button">K</button>
-      <button class="drum-btn" id="snare3" type="button" name="button">L</button>
+      <div class="wall__col">
+        <div class="wall__row">
+          <button class="drum-btn" id="hat1" type="button" name="button">W</button>
+        </div>
+        <div class="wall__row">
+          <button class="drum-btn" id="hat2" type="button" name="button">A</button>
+          <button class="drum-btn" id="hat3" type="button" name="button">S</button>
+          <button class="drum-btn" id="hat4" type="button" name="button">D</button>
+        </div>
+      </div>
+
+      <div class="wall__col">
+        <div class="wall__row">
+          <button class="drum-btn" id="stick" type="button" name="button">I</button>
+        </div>
+        <div class="wall__row">
+          <button class="drum-btn" id="snare1" type="button" name="button">J</button>
+          <button class="drum-btn" id="snare2" type="button" name="button">K</button>
+          <button class="drum-btn" id="snare3" type="button" name="button">L</button>
+        </div>
+      </div>
+
       <button class="drum-btn" id="kick" type="button" name="button">Space</button>
     </main>
 
