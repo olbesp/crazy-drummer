@@ -95,7 +95,7 @@ var controller = (function(dataCtrl, UICtrl) {
 		document.querySelector('.header__menu-icon').addEventListener('click',
 		function(){
 			this.classList.toggle("open");
-	  	document.querySelector('.main-nav__menu').classList.toggle('menu-open');
+	  	document.querySelector('.main-nav__menu').classList.toggle('main-nav__menu--open');
 		});
 
 		// GENRES
