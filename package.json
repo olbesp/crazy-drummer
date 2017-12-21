@@ -12,9 +12,10 @@
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
     "build:style": "npm-run-all compile:sass prefix:css compress:css",
     "clean": "rimraf dist",
+    "copyfiles": "copyfiles -a sounds/*/* dist",
     "imagemin": "imagemin img/* -o dist/img",
     "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
-    "build": "npm-run-all build:style clean imagemin usemin"
+    "build": "npm-run-all build:style clean copyfiles imagemin usemin"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
+    "copyfiles": "^1.2.0",
     "cssmin": "^0.4.3",
     "htmlmin": "0.0.7",
     "imagemin-cli": "^3.0.0",
