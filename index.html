@@ -4,9 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Bangers|Unkempt" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/animate.css">
+    <!-- build:css css/main.css-->
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- endbuild -->
     <title>Crazy Drummer</title>
   </head>
   <body>
@@ -28,30 +30,27 @@
       </nav>
     </header>
 
-      <div class="wall">
-        <img class="glass" src="img/glass.png" alt="">
-        <button class="drum-btn" id="hat1" type="button" name="button">W</button>
-        <button class="drum-btn" id="hat2" type="button" name="button">A</button>
-        <button class="drum-btn" id="hat3" type="button" name="button">S</button>
-        <button class="drum-btn" id="hat4" type="button" name="button">D</button>
-        <button class="drum-btn" id="stick" type="button" name="button">I</button>
-        <button class="drum-btn" id="snare1" type="button" name="button">J</button>
-        <button class="drum-btn" id="snare2" type="button" name="button">K</button>
-        <button class="drum-btn" id="snare3" type="button" name="button">L</button>
-        <button class="drum-btn" id="kick" type="button" name="button">Space</button>
-      </div>
+    <main class="wall">
+      <img class="glass" src="img/glass.png" alt="">
+      <button class="drum-btn" id="hat1" type="button" name="button">W</button>
+      <button class="drum-btn" id="hat2" type="button" name="button">A</button>
+      <button class="drum-btn" id="hat3" type="button" name="button">S</button>
+      <button class="drum-btn" id="hat4" type="button" name="button">D</button>
+      <button class="drum-btn" id="stick" type="button" name="button">I</button>
+      <button class="drum-btn" id="snare1" type="button" name="button">J</button>
+      <button class="drum-btn" id="snare2" type="button" name="button">K</button>
+      <button class="drum-btn" id="snare3" type="button" name="button">L</button>
+      <button class="drum-btn" id="kick" type="button" name="button">Space</button>
+    </main>
 
     <footer>
       <p>Made by Oleksii Bespalko</p>
       <a href="http://www.freepik.com/free-photos-vectors/vintage" target="_blank">Vintage image created by Photoangel - Freepik.com</a>
     </footer>
 
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.5/howler.min.js"></script>
+    <!-- build:js js/main.js-->
+    <script src="node_modules/howler/dist/howler.min.js"></script>
     <script src="js/script.js"></script>
+    <!-- endbuild -->
   </body>
 </html>

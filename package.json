@@ -4,7 +4,17 @@
   "description": "Virtual drum kit",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "build:style": "npm-run-all compile:sass prefix:css compress:css",
+    "clean": "rimraf dist",
+    "imagemin": "imagemin img/* -o dist/img",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build": "npm-run-all build:style clean imagemin usemin"
   },
   "repository": {
     "type": "git",
@@ -12,6 +22,23 @@
   },
   "author": "Oleksii Bespalko",
   "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "cssmin": "^0.4.3",
+    "htmlmin": "0.0.7",
+    "imagemin-cli": "^3.0.0",
+    "node-sass": "^4.6.0",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^4.1.1",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.2.1",
+    "usemin-cli": "^0.5.1"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "howler": "^2.0.7",
+    "normalize.css": "^7.0.0"
+  },
   "bugs": {
     "url": "https://github.com/olbesp/crazy-drummer/issues"
   },
