@@ -58,6 +58,13 @@ var UIController = (function() {
 				var randomClass = Math.floor(Math.random() * listOfClasses.length);
 				listOfElements[i].classList.add('animated', listOfClasses[randomClass]);
 			}
+		},
+
+		unpressMenuBtn: function() {
+			var menuBtns = document.querySelectorAll('.menu-btn');
+			for (var i = 0; i < menuBtns.length; i++) {
+				menuBtns[i].classList.remove('pressed');
+			}
 		}
 
 	}
@@ -102,6 +109,8 @@ var controller = (function(dataCtrl, UICtrl) {
 		document.querySelector('.main-nav__menu').addEventListener('click', function(event) {
 			if (event.target.id) {
 				var genre = event.target.id;
+				UICtrl.unpressMenuBtn()
+				document.getElementById(genre).classList.add('pressed');
 				setupGenre(genre);
 			}
 		});

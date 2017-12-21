@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0 3rem;
   background-image: linear-gradient($color-grey-dark-1, $color-grey-dark-2, $color-grey-dark-1);
-  box-shadow: $shadow-light;
+  box-shadow: $box-shadow-light;
 
   &__main-heading {
     font-family: 'Bangers', cursive;
@@ -19,7 +19,9 @@
 
   &__menu {
     display: flex;
-    flex-direction: column;
+    //flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     flex: 0 0 25%;
     background: linear-gradient(#0a0921, #3e3c60);
@@ -33,7 +35,9 @@
     }
 
     &-item {
-
+      display: flex;
+      justify-content: center;
+      flex: 0 0 55%;
     }
   }
 }
