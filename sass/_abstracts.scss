@@ -5,6 +5,11 @@ $color-grey-dark-2: #2d2444;
 $box-shadow-light: 0 1rem 2rem rgba(0, 0, 0, .7);
 $text-shadow: 2px 2px 1px #0a0921;
 
+@mixin gradient-dark {
+  background-image: linear-gradient($color-grey-dark-1, $color-grey-dark-2, $color-grey-dark-1);
+  box-shadow: $box-shadow-light;
+}
+
 // BREAKPOINTS
 $bp-largest: 75em; // 1200px/16px
 $bp-large: 68.75em; // 1100/16

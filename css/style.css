@@ -17,7 +17,11 @@ body {
   line-height: 1.6;
   color: #fff;
   height: 100vh;
-  overflow: hidden; }
+  overflow: hidden;
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 .header {
   display: flex;
@@ -55,11 +59,16 @@ body {
       justify-content: center;
       flex: 0 0 55%; }
 
-.wall {
-  background-image: url("../img/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; }
+.footer {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 0; }
+  .footer a {
+    text-decoration: none;
+    color: inherit; }
 
 .header__menu-icon {
   display: inline-block;

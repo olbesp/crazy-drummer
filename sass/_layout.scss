@@ -3,8 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
-  background-image: linear-gradient($color-grey-dark-1, $color-grey-dark-2, $color-grey-dark-1);
-  box-shadow: $box-shadow-light;
+  @include gradient-dark;
 
   &__main-heading {
     font-family: 'Bangers', cursive;
@@ -45,8 +44,20 @@
 }
 
 .wall {
-  background-image: url("../img/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+
+}
+
+.footer {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 0;
+  
+
+  & a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
