@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  background-image: linear-gradient($color-grey-dark-1, $color-grey-dark-2, $color-grey-dark-1);
+  box-shadow: $shadow-light;
+
+  &__main-heading {
+    font-family: 'Bangers', cursive;
+    font-size: 4rem;
+    margin: 0;
+  }
+
+  &__nav {
+
+    &__menu {
+
+      &-item {
+
+      }
+
+    }
+  }
+}

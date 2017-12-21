@@ -92,14 +92,14 @@ var controller = (function(dataCtrl, UICtrl) {
 		});
 
 		// MENU
-		document.querySelector('.menu-icon').addEventListener('click',
+		document.querySelector('.header__menu-icon').addEventListener('click',
 		function(){
 			this.classList.toggle("open");
-	  	document.querySelector('.menu').classList.toggle('menu-open');
+	  	document.querySelector('.main-nav__menu').classList.toggle('menu-open');
 		});
 
 		// GENRES
-		document.querySelector('.menu').addEventListener('click', function(event) {
+		document.querySelector('.main-nav__menu').addEventListener('click', function(event) {
 			if (event.target.id) {
 				var genre = event.target.id;
 				setupGenre(genre);
@@ -123,3 +123,4 @@ controller.init();
 // 		src: ["sounds/glass.mp3", "sounds/glass.ogg"]
 // 	});
 //
+// document.getElementById('elementID').click();
