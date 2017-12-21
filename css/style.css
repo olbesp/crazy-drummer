@@ -10,6 +10,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 31.25em) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: 'Unkempt', cursive;
@@ -168,5 +171,17 @@ body {
   text-shadow: 2px 2px 1px #0a0921;
   background: radial-gradient(circle at center, #454356 0, #26233d, #010107 100%);
   color: inherit; }
+  @media only screen and (max-width: 56.25em) {
+    .drum-btn {
+      width: 7rem;
+      height: 4rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .drum-btn {
+      font-size: 1.5rem;
+      margin: .5rem; } }
+  @media only screen and (max-width: 31.25em) {
+    .drum-btn {
+      width: 5rem;
+      height: 4rem; } }
   .drum-btn:focus {
     outline: none; }
