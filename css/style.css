@@ -163,14 +163,14 @@ body {
   width: 11rem;
   height: 7rem;
   margin: 1rem;
-  border: 0;
-  border-bottom: 4px solid #050505;
+  border: 2px solid #050505;
   border-radius: 13px;
   font-family: inherit;
   font-size: 2rem;
   text-shadow: 2px 2px 1px #0a0921;
   background: radial-gradient(circle at center, #454356 0, #26233d, #010107 100%);
-  color: inherit; }
+  color: inherit;
+  position: relative; }
   @media only screen and (max-width: 56.25em) {
     .drum-btn {
       width: 7rem;
@@ -185,3 +185,11 @@ body {
       height: 4rem; } }
   .drum-btn:focus {
     outline: none; }
+  .drum-btn.pressed {
+    background: #010107;
+    border: 2px solid #f7ca00; }
+    .drum-btn.pressed::before {
+      content: 'O';
+      position: absolute;
+      top: -1rem;
+      left: -1rem; }

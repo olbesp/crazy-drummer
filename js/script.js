@@ -65,7 +65,7 @@ var UIController = (function() {
 			for (var i = 0; i < menuBtns.length; i++) {
 				menuBtns[i].classList.remove('pressed');
 			}
-		}
+		},
 
 	}
 })();
@@ -84,18 +84,24 @@ var controller = (function(dataCtrl, UICtrl) {
 
 	var setupEventListeners = function() {
 		// DRUM BUTTONS
-		document.addEventListener('keydown', function(event) {
-			var isDrum = drums.some(function(drum) {
-				return drum.keyCode === event.keyCode;
-			});
+		['mousedown', 'keydown'].forEach(function(e) {
+	    document.addEventListener(e, function(event) {
 
-			if (isDrum) {
-				for (var i = 0; i < drums.length; i++) {
-					if (drums[i].keyCode === event.keyCode) {
-						drums[i].soundPathBuild().play();
+				event.preventDefault();
+				event.stopPropagation();
+				var isDrum = drums.some(function(drum) {
+					return drum.keyCode === event.keyCode || drum.id === event.target.id;
+				});
+
+				if (isDrum) {
+					for (var i = 0; i < drums.length; i++) {
+
+						if (drums[i].keyCode === event.keyCode || drums[i].id === event.target.id) {
+							drums[i].soundPathBuild().play();
+						}
 					}
 				}
-			}
+			}, false);
 		});
 
 		// MENU
@@ -132,4 +138,4 @@ controller.init();
 // 		src: ["sounds/glass.mp3", "sounds/glass.ogg"]
 // 	});
 //
-// document.getElementById('elementID').click();
+//
