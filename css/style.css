@@ -152,3 +152,18 @@ body {
 .pressed {
   background: #010107;
   border: 2px solid #f7ca00; }
+
+.drum-btn {
+  width: 11rem;
+  height: 7rem;
+  margin: 1rem;
+  border: 0;
+  border-bottom: 4px solid #050505;
+  border-radius: 13px;
+  font-family: inherit;
+  font-size: 2rem;
+  text-shadow: 2px 2px 1px #0a0921;
+  background: radial-gradient(circle at center, #454356 0, #26233d, #010107 100%);
+  color: inherit; }
+  .drum-btn:focus {
+    outline: none; }
