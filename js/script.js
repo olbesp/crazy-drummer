@@ -13,6 +13,15 @@ var dataController = (function() {
 		}
 	};
 
+	var SoundEffect = function(name) {
+		this.name = name;
+		this.sound = new Howl({
+			src: [
+				'sounds/effects/' + this.name + '.mp3',
+				'sounds/effects/' + this.name + '.ogg']
+		});
+	};
+
 	var drumBtns = [
 		new DrumBtn('hat1', 87),
 		new DrumBtn('hat2', 65),
@@ -25,9 +34,17 @@ var dataController = (function() {
 		new DrumBtn('kick', 32)
 	];
 
+	var soundEffects = [
+		new SoundEffect('glass')
+	];
+
 	return {
 		setupDrums: function() {
 			return drumBtns;
+		},
+
+		setupEffects: function() {
+			return soundEffects;
 		}
 	}
 })();
@@ -74,6 +91,7 @@ var controller = (function(dataCtrl, UICtrl) {
 
 	var btnList = document.querySelectorAll('.drum-btn');
 	var drums = dataCtrl.setupDrums();
+	var effects = dataCtrl.setupEffects();
 
 	var setupGenre = function(genre) {
 		drums.forEach(function(drum) {
@@ -84,25 +102,26 @@ var controller = (function(dataCtrl, UICtrl) {
 
 	var setupEventListeners = function() {
 		// DRUM BUTTONS
-		['mousedown', 'keydown'].forEach(function(e) {
-	    document.addEventListener(e, function(event) {
+    document.addEventListener('keydown', function(event) {
+			var isDrum = drums.some(function(drum) {
+				return drum.keyCode === event.keyCode;
+			});
 
-				event.preventDefault();
-				event.stopPropagation();
-				var isDrum = drums.some(function(drum) {
-					return drum.keyCode === event.keyCode || drum.id === event.target.id;
-				});
+			// var checkPressedKey = function()
 
-				if (isDrum) {
-					for (var i = 0; i < drums.length; i++) {
+			if (isDrum) {
+				for (var i = 0; i < drums.length; i++) {
 
-						if (drums[i].keyCode === event.keyCode || drums[i].id === event.target.id) {
-							drums[i].soundPathBuild().play();
-						}
+					if (drums[i].keyCode === event.keyCode) {
+						drums[i].soundPathBuild().play();
+						console.log(drums[i].id + 'plays');
 					}
 				}
-			}, false);
-		});
+			} else {
+				effects[Math.floor(Math.random() * effects.length)].sound.play();
+				console.log(event.keyCode + 'plays');
+			}
+		}, false);
 
 		// MENU
 		document.querySelector('.header__menu-icon').addEventListener('click',
