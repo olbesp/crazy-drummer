@@ -85,7 +85,7 @@
   }
 }
 
-.pressed {
+.active {
   background: #010107;
   border: 2px solid #f7ca00;
 }
@@ -125,12 +125,5 @@
   &.pressed {
     background: #010107;
     border: 2px solid #f7ca00;
-
-    &::before {
-      content: 'O';
-      position: absolute;
-      top: -1rem;
-      left: -1rem;
-    }
   }
 }

@@ -80,7 +80,7 @@ var UIController = (function() {
 		unpressMenuBtn: function() {
 			var menuBtns = document.querySelectorAll('.menu-btn');
 			for (var i = 0; i < menuBtns.length; i++) {
-				menuBtns[i].classList.remove('pressed');
+				menuBtns[i].classList.remove('active');
 			}
 		},
 
@@ -107,21 +107,25 @@ var controller = (function(dataCtrl, UICtrl) {
 				return drum.keyCode === event.keyCode;
 			});
 
-			// var checkPressedKey = function()
-
 			if (isDrum) {
 				for (var i = 0; i < drums.length; i++) {
 
 					if (drums[i].keyCode === event.keyCode) {
 						drums[i].soundPathBuild().play();
-						console.log(drums[i].id + 'plays');
+						document.getElementById(drums[i].id).classList.add('pressed');
 					}
 				}
 			} else {
 				effects[Math.floor(Math.random() * effects.length)].sound.play();
-				console.log(event.keyCode + 'plays');
 			}
 		}, false);
+
+		document.addEventListener('keyup', function() {
+			var pressedButton = document.querySelector('button.pressed');
+			if (pressedButton) {
+				pressedButton.classList.remove('pressed');
+			}
+		});
 
 		// MENU
 		document.querySelector('.header__menu-icon').addEventListener('click',
@@ -135,7 +139,7 @@ var controller = (function(dataCtrl, UICtrl) {
 			if (event.target.id) {
 				var genre = event.target.id;
 				UICtrl.unpressMenuBtn()
-				document.getElementById(genre).classList.add('pressed');
+				document.getElementById(genre).classList.add('active');
 				setupGenre(genre);
 			}
 		});
@@ -152,9 +156,3 @@ var controller = (function(dataCtrl, UICtrl) {
 })(dataController, UIController);
 
 controller.init();
-
-// 	var glass = new Howl({
-// 		src: ["sounds/glass.mp3", "sounds/glass.ogg"]
-// 	});
-//
-//

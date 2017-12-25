@@ -155,7 +155,7 @@ body {
   .menu-btn:focus {
     outline: none; }
 
-.pressed {
+.active {
   background: #010107;
   border: 2px solid #f7ca00; }
 
@@ -188,8 +188,3 @@ body {
   .drum-btn.pressed {
     background: #010107;
     border: 2px solid #f7ca00; }
-    .drum-btn.pressed::before {
-      content: 'O';
-      position: absolute;
-      top: -1rem;
-      left: -1rem; }
