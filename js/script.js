@@ -35,7 +35,11 @@ var dataController = (function() {
 	];
 
 	var soundEffects = [
-		new SoundEffect('glass')
+		new SoundEffect('glass'),
+		new SoundEffect('bark'),
+		new SoundEffect('scream'),
+		new SoundEffect('wrong'),
+		new SoundEffect('sheep')
 	];
 
 	return {
