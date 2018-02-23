@@ -8,9 +8,6 @@ const toolbar = (props) => (
   <header className={styles.Toolbar}>
     <MainHeading />
     <Toggler />
-    <nav>
-      Navigation
-    </nav>
   </header>
 );
 
