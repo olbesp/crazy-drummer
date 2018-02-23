@@ -22,7 +22,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Toolbar togglerClicked={this.menuToggleHandler} />
+        <Toolbar 
+          togglerClicked={this.menuToggleHandler}
+          open={this.state.showMenu}
+          closed={this.menuClosedHandler}
+        />
         <Menu 
           open={this.state.showMenu}
           closed={this.menuClosedHandler}

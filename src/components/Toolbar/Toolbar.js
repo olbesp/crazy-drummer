@@ -7,7 +7,7 @@ import Toggler from './Toggler/Toggler';
 const toolbar = (props) => (
   <header className={styles.Toolbar}>
     <MainHeading />
-    <Toggler clicked={props.togglerClicked} />
+    <Toggler clicked={props.togglerClicked} open={props.open} close={props.closed} />
   </header>
 );
 
