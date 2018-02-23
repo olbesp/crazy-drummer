@@ -4,5 +4,10 @@
   right: 0;
   z-index: 2;
   width: 220px;
-  background-color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  background-color: #31035c;
+  transition: all .5s;
+  transform: translateY(-100vh);
 }

@@ -11,7 +11,10 @@ const menu = (props) => {
       <Backdrop />
       <div>
         <nav className={styles.Menu}>
-          Navigation
+          <button>Rock</button>
+          <button>Hip-Hop</button>
+          <button>Dance</button>
+          <button>Dubstep</button>
         </nav>
       </div>
     </Aux>
