@@ -5,12 +5,21 @@ import Aux from '../../../hoc/Aux.js';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 
 const menu = (props) => {
-  
+  let classes = [
+    styles.Menu,
+    styles.Close
+  ];
+  if (props.open) {
+    classes = [
+      styles.Menu,
+      styles.Open
+    ];
+  }
   return (
     <Aux>
-      <Backdrop />
+      <Backdrop show={props.open} clicked={props.closed} />
       <div>
-        <nav className={styles.Menu}>
+        <nav className={classes.join(' ')}>
           <button>Rock</button>
           <button>Hip-Hop</button>
           <button>Dance</button>

@@ -9,5 +9,12 @@
   flex-direction: column;
   background-color: #31035c;
   transition: all .5s;
-  transform: translateY(-100vh);
+}
+
+.Open {
+  transform: translateY(0);
+}
+
+.Close {
+  transform: translateY(-100%);
 }
