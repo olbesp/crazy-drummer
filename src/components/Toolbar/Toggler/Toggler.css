@@ -1,0 +1,13 @@
+.Toggler {
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.Toggler div {
+  width: 100%;
+  height: .5rem;
+  background-color: white;
+  border-radius: 5px;
+}
