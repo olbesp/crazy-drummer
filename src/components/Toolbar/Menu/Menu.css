@@ -1,0 +1,8 @@
+.Menu {
+  position: fixed;
+  top: 5rem;
+  right: 0;
+  z-index: 2;
+  width: 220px;
+  background-color: white;
+}
