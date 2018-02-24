@@ -1,0 +1,104 @@
+.Drum {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-family: 'Unkempt', cursive;
+  text-shadow: -1px 1px #232323;
+  border: 2px solid #221b24;
+  border-radius: 50%;
+}
+
+.Hat1 {
+  bottom: 30%;
+  right: 2%;
+  z-index: 9;
+  background-image:  
+    linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d 2px, #584708 2px, #fcb83a 7px);
+  width: 100px;
+  height: 100px;
+}
+
+.Hat2 {
+  bottom: 45%;
+  right: 15%;
+  z-index: 10;
+  background-image:  
+    linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d 2px, #584708 2px, #fcb83a 7px);
+  width: 120px;
+  height: 120px;
+}
+
+.Hat3 {
+  bottom: 40%;
+  left: 15%;
+  z-index: 8;
+  background-image:  
+    linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d 2px, #584708 2px, #fcb83a 7px);
+  width: 90px;
+  height: 90px;
+}
+
+.Hat4 {
+  bottom: 25%;
+  left: 2%;
+  z-index: 7;
+  background-image:  
+    linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d 2px, #584708 2px, #fcb83a 7px);
+  width: 80px;
+  height: 80px;
+}
+
+.Snare1 {
+  bottom: 18%;
+  left: 15%;
+  z-index: 5;
+  background-image: radial-gradient(#fff, #363636);
+  width: 70px;
+  height: 70px;
+}
+
+.Snare2 {
+  bottom: 30%;
+  left: 25%;
+  z-index: 6;
+  background-image: radial-gradient(#fff, #1f1d1d);
+  width: 80px;
+  height: 80px;
+}
+
+.Snare3 {
+  bottom: 30%;
+  left: 50%;
+  z-index: 5;
+  background-image: radial-gradient(#fff, #383434);
+  width: 80px;
+  height: 80px;
+}
+
+.Snare4 {
+  bottom: 15%;
+  right: 5%;
+  z-index: 4;
+  background-image: radial-gradient(#acacac, #444343);
+  width: 90px;
+  height: 90px;
+}
+
+.Kick {
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-image: linear-gradient(90deg, #232323 40%, #fff 60%, #232323 100%);
+  width: 150px;
+  height: 40px;
+  border-radius: 0;
+}
