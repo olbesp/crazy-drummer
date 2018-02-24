@@ -7,7 +7,8 @@
   padding: 3rem;
   display: flex;
   flex-direction: column;
-  background-color: #31035c;
+  background-image: linear-gradient(#21033d, #5957e4);
+  box-shadow: -1rem 1rem 2rem rgba(0, 0, 0, .5);
   transition: all .5s;
 }
 
@@ -16,5 +17,5 @@
 }
 
 .Close {
-  transform: translateY(-100%);
+  transform: translateY(-100vh);
 }
