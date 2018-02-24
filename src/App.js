@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Toolbar from './components/Toolbar/Toolbar';
 import Menu from './components/Toolbar/Menu/Menu';
+import DrumKit from './components/DrumKit/DrumKit';
 
 class App extends Component {
   state = {
@@ -31,6 +32,7 @@ class App extends Component {
           open={this.state.showMenu}
           closed={this.menuClosedHandler}
         />
+        <DrumKit />
       </div>
     );
   }
