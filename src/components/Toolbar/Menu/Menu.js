@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './Menu.css';
 import Aux from '../../../hoc/Aux.js';
 import Backdrop from '../../UI/Backdrop/Backdrop';
-
+import GenreButton from '../../GenreButton/GenreButton';
 const menu = (props) => {
   let classes = [
     styles.Menu,
@@ -15,15 +15,21 @@ const menu = (props) => {
       styles.Open
     ];
   }
+  const genres = [
+    'Rock',
+    'Hip-Hop',
+    'Dance',
+    'Dubstep'
+  ].map((genre, index) => {
+    return <GenreButton key={index}>{genre}</GenreButton>
+  })
+
   return (
     <Aux>
       <Backdrop show={props.open} clicked={props.closed} />
       <div>
         <nav className={classes.join(' ')}>
-          <button>Rock</button>
-          <button>Hip-Hop</button>
-          <button>Dance</button>
-          <button>Dubstep</button>
+          {genres}
         </nav>
       </div>
     </Aux>

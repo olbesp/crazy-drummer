@@ -1,0 +1,19 @@
+.GenreButton {
+  padding: 1rem 0;
+  font-family: inherit;
+  color: white;
+  text-shadow: -1px 1px #232323;
+  border: 2px solid #15022b;
+  background-image: radial-gradient(circle at center, #454356 0, #26233d, #010107 100%);
+  outline: none;
+  cursor: pointer;
+}
+
+.GenreButton:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.active {
+  background: #010107;
+  border: 2px solid #f7ca00;
+}

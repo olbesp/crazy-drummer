@@ -9,7 +9,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background-image: linear-gradient(#21033d 10%, #5957e4 50%, #21033d 90%);
+  background-image: linear-gradient(#010107, #26233d, #454356, #26233d, #010107);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, .5);
   color: white;
 }
