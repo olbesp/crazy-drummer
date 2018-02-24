@@ -4,16 +4,7 @@ import styles from './DrumKit.css';
 import Background from '../../assets/images/floor.jpeg';
 import Drum from './Drum/Drum';
 import { Howl } from 'howler';
-// Sound Library
-// import rockHat1 from '../../assets/sounds/rock/hat1.mp3';
-// import rockHat2 from '../../assets/sounds/rock/hat2.mp3';
-// import rockHat3 from '../../assets/sounds/rock/hat3.mp3';
-// import rockHat4 from '../../assets/sounds/rock/hat4.mp3';
-// import rockSnare1 from '../../assets/sounds/rock/snare1.mp3';
-// import rockSnare2 from '../../assets/sounds/rock/snare2.mp3';
-// import rockSnare3 from '../../assets/sounds/rock/snare3.mp3';
-// import rockStick from '../../assets/sounds/rock/stick.mp3';
-import rockKick from '../../assets/sounds/rock/kick.mp3';
+
 
 const drums = [
   { drumClass: 'Hat1', drumButton: 'i', keyCode: 73 },
@@ -37,7 +28,7 @@ class DrumKit extends Component {
     this.setState({
       drumClass: e.target.classList[1],
       keyCode: e.keyCode,
-      soundSrc: rockKick
+      soundSrc: ''
     });
     // library[`${this.props.genre}${e.target.classList[1]}`]
   }
