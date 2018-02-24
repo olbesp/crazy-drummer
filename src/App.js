@@ -7,7 +7,8 @@ import DrumKit from './components/DrumKit/DrumKit';
 
 class App extends Component {
   state = {
-    showMenu: false
+    showMenu: false,
+    activeGenre: 'rock'
   }
 
   menuClosedHandler = () => {
@@ -17,6 +18,12 @@ class App extends Component {
   menuToggleHandler = () => {
     this.setState((prevState) => {
       return { showMenu: !prevState.showMenu };
+    });
+  }
+
+  genreChangedHandler = (e) => {
+    this.setState({
+      activeGenre: e.target.textContent.toLowerCase()
     });
   }
 
@@ -31,8 +38,9 @@ class App extends Component {
         <Menu 
           open={this.state.showMenu}
           closed={this.menuClosedHandler}
+          changeGenre={this.genreChangedHandler}
         />
-        <DrumKit />
+        <DrumKit genre={this.state.activeGenre}  />
       </div>
     );
   }
