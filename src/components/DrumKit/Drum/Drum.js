@@ -1,19 +1,15 @@
 import React from 'react';
 
 import styles from './Drum.css';
-import Aux from '../../../hoc/Aux';
-import ReactHowler from 'react-howler';
+import { Howl } from 'howler';
+// import Hat1 from '../../../assets/sounds/rock/hat1.mp3';
 
 const drum = (props) => {
-  
+  const sound = new Howl({
+    src: [props.sound]
+  });
   return (
-    <Aux>
-      <ReactHowler
-        src={props.sound}
-        playing={props.play}
-      />
-      <div className={[styles.Drum, styles[props.drumClass]].join(' ')}>{props.drumButton}</div>
-    </Aux>
+      <div onClick={() => sound.play()} className={[styles.Drum, styles[props.drumClass]].join(' ')}>{props.drumButton}</div>
   );
 }
 
