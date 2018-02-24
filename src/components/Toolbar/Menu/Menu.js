@@ -21,7 +21,7 @@ const menu = (props) => {
     'Dance',
     'Dubstep'
   ].map((genre, index) => {
-    return <GenreButton key={index} clicked={props.changeGenre}>{genre}</GenreButton>
+    return <GenreButton key={index} active={props.genre} clicked={props.changeGenre}>{genre}</GenreButton>
   })
 
   return (

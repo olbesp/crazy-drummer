@@ -39,6 +39,7 @@ class App extends Component {
           open={this.state.showMenu}
           closed={this.menuClosedHandler}
           changeGenre={this.genreChangedHandler}
+          genre={this.state.activeGenre}
         />
         <DrumKit genre={this.state.activeGenre}  />
       </div>
