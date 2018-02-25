@@ -1,3 +1,4 @@
+import { Howl } from 'howler';
 // Sound Library
 import rockHat1 from '../../../assets/sounds/rock/hat1.mp3';
 import rockHat2 from '../../../assets/sounds/rock/hat2.mp3';
@@ -39,11 +40,17 @@ import dubstepSnare3 from '../../../assets/sounds/dubstep/snare3.mp3';
 import dubstepStick from '../../../assets/sounds/dubstep/stick.mp3';
 import dubstepKick from '../../../assets/sounds/dubstep/kick.mp3';
 
-const library = {
-  rock: { rockHat1, rockHat2, rockHat3, rockHat4, rockSnare1, rockSnare2, rockSnare3, rockStick, rockKick },
-  hipHop: { hipHopHat1, hipHopHat2, hipHopHat3, hipHopHat4, hipHopSnare1, hipHopSnare2, hipHopSnare3, hipHopStick, hipHopKick },
-  dance: { danceHat1, danceHat2, danceHat3, danceHat4, danceSnare1, danceSnare2, danceSnare3, danceStick, danceKick },
-  dubstep: { dubstepHat1, dubstepHat2, dubstepHat3, dubstepHat4, dubstepSnare1, dubstepSnare2, dubstepSnare3, dubstepStick, dubstepKick }
+class MusicStyle {
+  constructor(...drums) {
+    this.library = drums.reduce ;
+  }
 }
 
-export default library;
+const sounds = {
+  rock: new MusicStyle([rockHat1, rockHat2, rockHat3, rockHat4, rockSnare1, rockSnare2, rockSnare3, rockStick, rockKick]),
+  hipHop: new MusicStyle(hipHopHat1, hipHopHat2, hipHopHat3, hipHopHat4, hipHopSnare1, hipHopSnare2, hipHopSnare3, hipHopStick, hipHopKick),
+  dance: new MusicStyle(danceHat1, danceHat2, danceHat3, danceHat4, danceSnare1, danceSnare2, danceSnare3, danceStick, danceKick),
+  dubstep: new MusicStyle(dubstepHat1, dubstepHat2, dubstepHat3, dubstepHat4, dubstepSnare1, dubstepSnare2, dubstepSnare3, dubstepStick, dubstepKick)
+};
+
+export default sounds;

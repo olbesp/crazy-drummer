@@ -8,7 +8,8 @@ import DrumKit from './components/DrumKit/DrumKit';
 class App extends Component {
   state = {
     showMenu: false,
-    activeGenre: 'rock'
+    activeGenre: 'rock',
+    drumHit: null
   }
 
   menuClosedHandler = () => {
@@ -27,6 +28,21 @@ class App extends Component {
     });
   }
 
+  drumHitHandler = (e) => {
+    this.setState({ drumHit: e.keyCode });
+    console.log(this.state.drumHit)
+  }
+
+  drumHitReleaseHandler = () => {
+    this.setState({ drumHit: null });
+    console.log(this.state.drumHit)
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", this.drumHitHandler);
+    document.addEventListener('keyup', this.drumHitReleaseHandler);
+  }
+
   render() {
     return (
       <div className="App">
@@ -41,7 +57,9 @@ class App extends Component {
           changeGenre={this.genreChangedHandler}
           genre={this.state.activeGenre}
         />
-        <DrumKit genre={this.state.activeGenre}  />
+        <DrumKit 
+          genre={this.state.activeGenre}
+          hitted={this.state.drumHit} />
       </div>
     );
   }

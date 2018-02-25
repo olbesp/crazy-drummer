@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import styles from './DrumKit.css';
 import Background from '../../assets/images/floor.jpeg';
 import Drum from './Drum/Drum';
-import { Howl } from 'howler';
+// import sounds from './Library/Library';
 
-
+// console.log(sounds);
 const drums = [
   { drumClass: 'Hat1', drumButton: 'i', keyCode: 73 },
   { drumClass: 'Hat2', drumButton: 'j', keyCode: 74 },
@@ -19,25 +19,7 @@ const drums = [
 ]
 
 class DrumKit extends Component {
-  state = {
-    drumClass: null,
-    keyCode: null,
-    soundSrc: null
-  }
-  setSound = (e) => {
-    this.setState({
-      drumClass: e.target.classList[1],
-      keyCode: e.keyCode,
-      soundSrc: ''
-    });
-    // library[`${this.props.genre}${e.target.classList[1]}`]
-  }
-  drumPlayHandler = () => {
-    const sound = new Howl({
-      src: [this.state.soundSrc]
-    });
-    sound.play();
-  }
+  
   render() {
     const DOMdrums = drums.map((drum, index) => {
       return <Drum 
@@ -50,7 +32,7 @@ class DrumKit extends Component {
     });
 
     return (
-      <div className={styles.DrumKit} style={{
+      <div className={styles.DrumKit} onKeyDown={this.props.drumHitted} style={{
         backgroundImage: `radial-gradient(rgba(0, 0, 0, 0), rgba(18, 12, 45, .8)), url(${Background})`
       }}>{DOMdrums}</div>
     );
