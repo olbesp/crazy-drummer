@@ -5,9 +5,6 @@ import Background from '../../assets/images/floor.jpeg';
 import Drum from './Drum/Drum';
 import library from './Library/Library';
 
-console.log(library);
-
-// props: genre - rock, keyCode - 35
 
 const drums = [
   { drumClass: 'Hat1', drumButton: 'i' },
@@ -38,7 +35,6 @@ class DrumKit extends Component {
   render() {
     const DOMdrums = drums.map((drum, index) => {
       return <Drum 
-          sound={this.setSound} 
           key={index} 
           drumClass={drum.drumClass} 
           drumButton={drum.drumButton} 
@@ -46,9 +42,16 @@ class DrumKit extends Component {
     });
 
     return (
-      <div className={styles.DrumKit} style={{
-        backgroundImage: `radial-gradient(rgba(0, 0, 0, 0), rgba(18, 12, 45, .8)), url(${Background})`
-      }}>{DOMdrums}</div>
+      <div
+        className={styles.DrumKit} 
+        style={{
+          backgroundImage: `radial-gradient(rgba(0, 0, 0, 0), rgba(18, 12, 45, .8)), url(${Background})`
+        }}
+        onMouseDown={this.props.clickedDown}
+        onMouseUp={this.props.clickedUp}
+      >
+        {DOMdrums}
+      </div>
     );
   }
 }

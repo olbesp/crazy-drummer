@@ -34,7 +34,31 @@ class App extends Component {
 
   drumHitReleaseHandler = () => {
     this.setState({ drumHitKeyCode: null });
-    console.log(this.state.drumHit)
+  }
+
+  drumClickedDownHandler = (e) => {
+    if (e.target.textContent) {
+      let keyCode;
+      switch (e.target.textContent.toLowerCase()) {
+        case 'i': keyCode = 73; break;
+        case 'j': keyCode = 74; break;
+        case 'k': keyCode = 75; break;
+        case 'l': keyCode = 76; break;
+        case 'w': keyCode = 87; break;
+        case 'a': keyCode = 65; break;
+        case 's': keyCode = 83; break;
+        case 'd': keyCode = 68; break;
+        case 'space': keyCode = 32; break;
+        default: keyCode = null;
+      }
+      this.setState({ drumHitKeyCode: keyCode });
+    }
+  }
+
+  drumClickedUpHandler = () => {
+    if (this.state.drumHitKeyCode) {
+      this.setState({ drumHitKeyCode: null });
+    }
   }
 
   componentDidMount() {
@@ -63,7 +87,9 @@ class App extends Component {
         />
         <DrumKit 
           genre={this.state.activeGenre}
-          keyCode={this.state.drumHitKeyCode} />
+          keyCode={this.state.drumHitKeyCode}
+          clickedDown={this.drumClickedDownHandler}
+          clickedUp={this.drumClickedUpHandler} />
       </div>
     );
   }
