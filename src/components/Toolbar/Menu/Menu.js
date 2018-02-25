@@ -17,7 +17,7 @@ const menu = (props) => {
   }
   const genres = [
     'Rock',
-    'Hip-Hop',
+    'HipHop',
     'Dance',
     'Dubstep'
   ].map((genre, index) => {

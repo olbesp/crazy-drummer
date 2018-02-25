@@ -40,17 +40,33 @@ import dubstepSnare3 from '../../../assets/sounds/dubstep/snare3.mp3';
 import dubstepStick from '../../../assets/sounds/dubstep/stick.mp3';
 import dubstepKick from '../../../assets/sounds/dubstep/kick.mp3';
 
-class MusicStyle {
-  constructor(...drums) {
-    this.library = drums.reduce ;
+
+const createLibrary = (keyCodes, drums) => {
+  const lib = {};
+  for (let i = 0; i < keyCodes.length; i++) {
+    lib[keyCodes[i]] = new Howl({
+      src:[drums[i]]
+    });
   }
+  return lib;
 }
 
-const sounds = {
-  rock: new MusicStyle([rockHat1, rockHat2, rockHat3, rockHat4, rockSnare1, rockSnare2, rockSnare3, rockStick, rockKick]),
-  hipHop: new MusicStyle(hipHopHat1, hipHopHat2, hipHopHat3, hipHopHat4, hipHopSnare1, hipHopSnare2, hipHopSnare3, hipHopStick, hipHopKick),
-  dance: new MusicStyle(danceHat1, danceHat2, danceHat3, danceHat4, danceSnare1, danceSnare2, danceSnare3, danceStick, danceKick),
-  dubstep: new MusicStyle(dubstepHat1, dubstepHat2, dubstepHat3, dubstepHat4, dubstepSnare1, dubstepSnare2, dubstepSnare3, dubstepStick, dubstepKick)
+const keyCodes = ['73', '74', '75', '76', '87', '65', '83', '68', '32'];
+const rockDrums = [rockHat1, rockHat2, rockHat3, rockHat4, rockSnare1, rockSnare2, rockSnare3, rockStick, rockKick];
+const hipHopDrums = [hipHopHat1, hipHopHat2, hipHopHat3, hipHopHat4, hipHopSnare1, hipHopSnare2, hipHopSnare3, hipHopStick, hipHopKick];
+const danceDrums = [danceHat1, danceHat2, danceHat3, danceHat4, danceSnare1, danceSnare2, danceSnare3, danceStick, danceKick];
+const dubstepDrums = [dubstepHat1, dubstepHat2, dubstepHat3, dubstepHat4, dubstepSnare1, dubstepSnare2, dubstepSnare3, dubstepStick, dubstepKick];
+
+const rock = createLibrary(keyCodes, rockDrums);
+const hiphop = createLibrary(keyCodes, hipHopDrums);
+const dance = createLibrary(keyCodes, danceDrums);
+const dubstep = createLibrary(keyCodes, dubstepDrums);
+
+const library = {
+  rock,
+  hiphop,
+  dance,
+  dubstep
 };
 
-export default sounds;
+export default library;

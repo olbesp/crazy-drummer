@@ -5,6 +5,8 @@ import Background from '../../assets/images/floor.jpeg';
 import Drum from './Drum/Drum';
 import library from './Library/Library';
 
+console.log(library);
+
 // props: genre - rock, keyCode - 35
 
 const drums = [
@@ -22,8 +24,8 @@ const drums = [
 class DrumKit extends Component {
   
   componentDidUpdate() {
-    if (this.props.keyCode) {
-      library[this.props.genre][this.props.keyCode].play();
+    if (this.props.keyCode && this.props.genre) {
+      library[this.props.genre][`${this.props.keyCode}`].play();
       // console.log(`Play ${this.props.genre} - ${this.props.keyCode}`);
     }
   }
