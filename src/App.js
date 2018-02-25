@@ -42,6 +42,11 @@ class App extends Component {
     document.addEventListener('keyup', this.drumHitReleaseHandler);
   }
 
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.drumHitHandler);
+    document.removeEventListener('keyup', this.drumHitReleaseHandler);
+  }
+
   render() {
     return (
       <div className="App">

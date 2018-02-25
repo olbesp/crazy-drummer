@@ -25,8 +25,13 @@ class DrumKit extends Component {
   
   componentDidUpdate() {
     if (this.props.keyCode && this.props.genre) {
-      library[this.props.genre][`${this.props.keyCode}`].play();
-      // console.log(`Play ${this.props.genre} - ${this.props.keyCode}`);
+      if (library[this.props.genre][`${this.props.keyCode}`]) {
+        library[this.props.genre][`${this.props.keyCode}`].play();
+      } else if (this.props.keyCode >= 65 && this.props.keyCode <= 90) {
+        library.effects[Math.floor(Math.random() * library.effects.length)].play();
+      } else {
+        return false;
+      }
     }
   }
 
