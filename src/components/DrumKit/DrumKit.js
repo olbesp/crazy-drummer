@@ -5,7 +5,6 @@ import Background from '../../assets/images/floor.jpeg';
 import Drum from './Drum/Drum';
 import library from './Library/Library';
 
-
 const drums = [
   { drumClass: 'Hat1', drumButton: 'i' },
   { drumClass: 'Hat2', drumButton: 'j' },
@@ -22,8 +21,9 @@ class DrumKit extends Component {
   
   componentDidUpdate() {
     if (this.props.keyCode && this.props.genre) {
-      if (library[this.props.genre][`${this.props.keyCode}`]) {
-        library[this.props.genre][`${this.props.keyCode}`].play();
+      const drum = library[this.props.genre][`${this.props.keyCode}`]
+      if (drum) {
+        drum.sound.play();
       } else if (this.props.keyCode >= 65 && this.props.keyCode <= 90) {
         library.effects[Math.floor(Math.random() * library.effects.length)].play();
       } else {
@@ -37,7 +37,7 @@ class DrumKit extends Component {
       return <Drum 
           key={index} 
           drumClass={drum.drumClass} 
-          drumButton={drum.drumButton} 
+          drumButton={drum.drumButton}
         />;
     });
 

@@ -5,7 +5,7 @@ import styles from './Drum.css';
 const drum = (props) => {
   
   return (
-      <div className={[styles.Drum, styles[props.drumClass]].join(' ')}>{props.drumButton}</div>
+    <div id={props.drumButton} className={[styles.Drum, styles[props.drumClass]].join(' ')}>{props.drumButton}</div>
   );
 }
 

@@ -47,27 +47,31 @@ import sheep from '../../../assets/sounds/effects/sheep.mp3';
 import wrong from '../../../assets/sounds/effects/wrong.mp3';
 
 
-const createLibrary = (keyCodes, drums) => {
+const createLibrary = (keyCodes, keyLetters, drums) => {
   const lib = {};
   for (let i = 0; i < keyCodes.length; i++) {
-    lib[keyCodes[i]] = new Howl({
-      src:[drums[i]]
-    });
+    lib[keyCodes[i]] = {
+      sound: new Howl({
+        src: [drums[i]]
+      }),
+      id: keyLetters[i]
+    }
   }
   return lib;
 }
 
 const keyCodes = ['73', '74', '75', '76', '87', '65', '83', '68', '32'];
+const keyLetters = ['i','j', 'k', 'l', 'w', 'a', 's', 'd', 'space'];
 const rockDrums = [rockHat1, rockHat2, rockHat3, rockHat4, rockSnare1, rockSnare2, rockSnare3, rockStick, rockKick];
 const hipHopDrums = [hipHopHat1, hipHopHat2, hipHopHat3, hipHopHat4, hipHopSnare1, hipHopSnare2, hipHopSnare3, hipHopStick, hipHopKick];
 const danceDrums = [danceHat1, danceHat2, danceHat3, danceHat4, danceSnare1, danceSnare2, danceSnare3, danceStick, danceKick];
 const dubstepDrums = [dubstepHat1, dubstepHat2, dubstepHat3, dubstepHat4, dubstepSnare1, dubstepSnare2, dubstepSnare3, dubstepStick, dubstepKick];
 const effects = [bark, glass, scream, sheep, wrong].map(effect => new Howl({ src: effect }));
 
-const rock = createLibrary(keyCodes, rockDrums);
-const hiphop = createLibrary(keyCodes, hipHopDrums);
-const dance = createLibrary(keyCodes, danceDrums);
-const dubstep = createLibrary(keyCodes, dubstepDrums);
+const rock = createLibrary(keyCodes, keyLetters, rockDrums);
+const hiphop = createLibrary(keyCodes, keyLetters, hipHopDrums);
+const dance = createLibrary(keyCodes, keyLetters, danceDrums);
+const dubstep = createLibrary(keyCodes, keyLetters, dubstepDrums);
 
 const library = {
   rock,

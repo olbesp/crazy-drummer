@@ -55,7 +55,7 @@ class App extends Component {
     }
   }
 
-  drumClickedUpHandler = () => {
+  drumClickedUpHandler = (e) => {
     if (this.state.drumHitKeyCode) {
       this.setState({ drumHitKeyCode: null });
     }
