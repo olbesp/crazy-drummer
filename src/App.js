@@ -9,7 +9,7 @@ class App extends Component {
   state = {
     showMenu: false,
     activeGenre: 'rock',
-    drumHit: null
+    drumHitKeyCode: null
   }
 
   menuClosedHandler = () => {
@@ -29,12 +29,11 @@ class App extends Component {
   }
 
   drumHitHandler = (e) => {
-    this.setState({ drumHit: e.keyCode });
-    console.log(this.state.drumHit)
+    this.setState({ drumHitKeyCode: e.keyCode });
   }
 
   drumHitReleaseHandler = () => {
-    this.setState({ drumHit: null });
+    this.setState({ drumHitKeyCode: null });
     console.log(this.state.drumHit)
   }
 
@@ -59,7 +58,7 @@ class App extends Component {
         />
         <DrumKit 
           genre={this.state.activeGenre}
-          hitted={this.state.drumHit} />
+          keyCode={this.state.drumHitKeyCode} />
       </div>
     );
   }
