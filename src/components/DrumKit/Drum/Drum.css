@@ -7,52 +7,150 @@
   text-transform: uppercase;
   font-size: 2rem;
   text-shadow: -1px 1px #232323;
-  border: 2px solid #221b24;
+  /* border: 2px solid #221b24; */
   border-radius: 50%;
 }
 
 .Hat1 {
-  bottom: 30%;
-  right: 2%;
-  z-index: 9;
-  background-image:  
-    linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
-    radial-gradient(#29271d 2px, #584708 2px, #fcb83a 7px);
-  width: 100px;
-  height: 100px;
-}
-
-.Hat2 {
   bottom: 45%;
   right: 15%;
   z-index: 10;
   background-image:  
     linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
-    radial-gradient(#29271d 2px, #584708 2px, #fcb83a 7px);
+    radial-gradient(#29271d, #fcb83a 7px);
   width: 120px;
   height: 120px;
+  align-items: flex-end;
+  box-shadow: -13px 13px 10px rgba(0,0,0,.7),
+    2px -2px 30px 4px rgba(0,0,0,.5) inset, 
+    -10px 10px 10px rgba(255,255,255,.7) inset;
+}
+
+.Hat1::after {
+  content: "\25CF";
+  color: #232323;
+  text-shadow: -3px 3px 1px rgba(0,0,0,.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  background-image: linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d, #fcb83a 7px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 4px -4px 7px rgba(0,0,0,.5) inset, -4px 4px 10px rgba(0,0,0,.3), -4px 4px 6px rgba(255,255,255,.7) inset;
+}
+
+.Hat2 {
+  bottom: 25%;
+  left: 2%;
+  z-index: 7;
+  align-items: flex-end;
+  background-image:  
+    linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d, #fcb83a 7px);
+  width: 80px;
+  height: 80px;
+  box-shadow: -13px 13px 10px rgba(0,0,0,.7),
+    2px -2px 30px 4px rgba(0,0,0,.5) inset, 
+    -10px 10px 10px rgba(255,255,255,.4) inset;
+}
+
+.Hat2::after {
+  content: "\25CF";
+  color: #232323;
+  text-shadow: -3px 3px 4px rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-image: linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d, #fcb83a 7px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 4px -4px 7px rgba(0,0,0,.2) inset,
+    -2px 2px 3px rgba(0,0,0,.1), 
+    -2px 2px 2px rgba(255,255,255,.2) inset;
 }
 
 .Hat3 {
   bottom: 40%;
   left: 15%;
   z-index: 8;
+  align-items: flex-end;
   background-image:  
     linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
-    radial-gradient(#29271d 2px, #584708 2px, #fcb83a 7px);
+    radial-gradient(#29271d, #fcb83a 7px);
   width: 90px;
   height: 90px;
+  box-shadow: -13px 13px 10px rgba(0,0,0,.7),
+    2px -2px 30px 4px rgba(0,0,0,.5) inset, 
+    -10px 10px 10px rgba(255,255,255,.4) inset;
+}
+
+.Hat3::after {
+  content: "\25CF";
+  color: #232323;
+  text-shadow: -3px 3px 4px rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-image: linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d, #fcb83a 7px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 4px -4px 7px rgba(0,0,0,.2) inset,
+    -2px 2px 3px rgba(0,0,0,.1), 
+    -2px 2px 2px rgba(255,255,255,.2) inset;
 }
 
 .Hat4 {
-  bottom: 25%;
-  left: 2%;
-  z-index: 7;
+  bottom: 30%;
+  right: 2%;
+  z-index: 9;
   background-image:  
     linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
-    radial-gradient(#29271d 2px, #584708 2px, #fcb83a 7px);
-  width: 80px;
-  height: 80px;
+    radial-gradient(#29271d, #fcb83a 7px);
+  width: 100px;
+  height: 100px;
+  align-items: flex-end;
+  box-shadow: -10px 10px 10px rgba(0,0,0,.5),
+    5px -5px 40px 4px rgba(0,0,0,.7) inset, 
+    -5px 5px 10px rgba(255,255,255,.7) inset;
+}
+
+.Hat4::after {
+  content: "\25CF";
+  color: #232323;
+  text-shadow: -3px 3px 1px rgba(0,0,0,.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-image: linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
+    radial-gradient(#29271d, #fcb83a 7px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 4px -4px 7px rgba(0,0,0,.5) inset,
+    -4px 4px 10px rgba(0,0,0,.3), 
+    -4px 4px 6px rgba(255,255,255,.7) inset;
 }
 
 .Snare1 {
