@@ -3,4 +3,13 @@
   width: 100%;
   background-size: contain;
   background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DrumsContainer {
+  position: relative;
+  width: 320px;
+  height: 320px;
 }

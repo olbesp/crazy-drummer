@@ -33,8 +33,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 30%;
+  height: 30%;
   position: absolute;
   background-image: linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
     radial-gradient(#29271d, #fcb83a 7px);
@@ -67,8 +67,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 40%;
+  height: 40%;
   position: absolute;
   background-image: linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
     radial-gradient(#29271d, #fcb83a 7px);
@@ -103,8 +103,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 40%;
+  height: 40%;
   position: absolute;
   background-image: linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
     radial-gradient(#29271d, #fcb83a 7px);
@@ -139,8 +139,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 35%;
+  height: 35%;
   position: absolute;
   background-image: linear-gradient(45deg, rgba(65, 65, 10, 0.5), rgba(255, 255, 255, .5)),
     radial-gradient(#29271d, #fcb83a 7px);
@@ -200,3 +200,22 @@
   border-radius: 0;
 }
 
+@media (min-width: 450px) {
+  .Hat1 { width: 160px; height: 160px;}
+  .Hat2 {}
+  .Hat3 {}
+  .Hat4 {}
+  .Snare1 {}
+  .Snare2 {}
+  .Snare3 {}
+  .Stick {}
+  .Kick {}
+  .Hat1::after {}
+  .Hat2::after {}
+  .Hat3::after {}
+  .Hat4::after {}
+  .Snare1::after {}
+  .Snare2::after {}
+  .Snare3::after {}
+  .Kick::after {}
+}

@@ -50,7 +50,9 @@ class DrumKit extends Component {
         onMouseDown={this.props.clickedDown}
         onMouseUp={this.props.clickedUp}
       >
-        {DOMdrums}
+        <div className={styles.DrumsContainer}>
+          {DOMdrums}
+        </div>
       </div>
     );
   }
