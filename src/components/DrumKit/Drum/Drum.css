@@ -194,8 +194,61 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  background-image: linear-gradient(90deg, #232323 40%, #fff 60%, #232323 100%);
+  background-image: linear-gradient(90deg, #5e5e5e 40%, #fff 60%, #5e5e5e 100%);
   width: 34%;
   height: 30%;
   border-radius: 0;
+  box-shadow: -3rem 3rem 10px rgba(0,0,0,.8);
+}
+
+.Kick::before {
+  content: "space";
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: -45%;
+  right: 30%;
+  width: 20%;
+  height: 40%;
+  background-image: 
+    linear-gradient(transparent 5%, #232323 5%, #232323 10%,
+      transparent 10%, transparent 15%, #232323 15%, #232323 20%,
+      transparent 20%, transparent 25%, #232323 25%, #232323 30%,
+      transparent 30%, transparent 35%, #232323 35%, #232323 40%,
+      transparent 40%, transparent 45%, #232323 45%, #232323 50%
+      ),
+      
+      linear-gradient(#2e8ddb, #070b1b);
+  border: 2px solid #232323;
+  border-radius: 10px;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  box-shadow: -1.5rem 0 5px rgba(0,0,0,.5);
+}
+
+.Kick::after {
+  content: "";
+  position: absolute;
+  top: 5%;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  border: 2px solid #232323;
+  background-image: linear-gradient(90deg, 
+    #070b1b, #0b3257 20%,
+    #232323 20%, #232323 21%,
+    transparent 21%, transparent 22%,
+    #232323 22%, #232323 23%,
+    #0b3257 23%, #2e8ddb, #8ab7c9 57%,
+    #232323 57%, #232323 58%,
+    white 58%, white 59%,
+    #232323 59%, #232323 60%,
+    #8ab7c9 60%, #2e8ddb , #0b3257 94%,
+    #232323 94%, #232323 95%,
+    transparent 95%, transparent 96%,
+    #232323 96%, #232323 97%,
+    #0b3257 97%, #070b1b 100%
+
+    );
 }
