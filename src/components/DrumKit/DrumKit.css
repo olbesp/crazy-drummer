@@ -13,3 +13,52 @@
   width: 320px;
   height: 320px;
 }
+
+@media (min-width: 450px) and (min-height: 450px) {
+  .DrumsContainer {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+@media (min-width: 600px) and (min-height: 600px) {
+  .DrumsContainer {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media (min-width: 750px) and (min-height: 750px) {
+  .DrumsContainer {
+    width: 750px;
+    height: 750px;
+  }
+}
+
+@media (min-width: 900px) and (min-height: 900px) {
+  .DrumsContainer {
+    width: 900px;
+    height: 900px;
+  }
+}
+
+@media (min-width: 1050px) and (min-height: 1050px) {
+  .DrumsContainer {
+    width: 1050px;
+    height: 1050px;
+  }
+}
+
+@media (min-width: 1200px) and (min-height: 1200px) {
+  .DrumsContainer {
+    width: 1200px;
+    height: 1200px;
+  }
+}
+
+@media (min-width: 1450px) and (min-height: 1450px) {
+  .DrumsContainer {
+    width: 1450px;
+    height: 1450px;
+  }
+}
