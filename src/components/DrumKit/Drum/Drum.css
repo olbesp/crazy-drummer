@@ -57,6 +57,28 @@
     -10px 10px 10px rgba(255,255,255,.4) inset;
 }
 
+.Hat2::before {
+  content: "";
+  position: absolute;
+  bottom: -47%;
+  right: 1%;
+  width: 30%;
+  height: 50%;
+  transform: rotate(-25deg);
+  background-image: 
+    linear-gradient(transparent 5%, #232323 5%, #232323 10%,
+      transparent 10%, transparent 15%, #232323 15%, #232323 20%,
+      transparent 20%, transparent 25%, #232323 25%, #232323 30%,
+      transparent 30%, transparent 35%, #232323 35%, #232323 40%,
+      transparent 40%, transparent 45%, #232323 45%, #232323 50%
+      ), linear-gradient(#2e8ddb, #070b1b);
+  border: 2px solid #232323;
+  border-radius: 10px;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  box-shadow: -1.5rem 0 5px rgba(0,0,0,.5);
+}
+
 .Hat2::after {
   content: "\25CF";
   color: #232323;
