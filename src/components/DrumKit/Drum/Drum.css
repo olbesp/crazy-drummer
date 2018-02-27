@@ -232,6 +232,8 @@
   transform: translateX(-50%);
   z-index: 2;
   align-items: center;
+  color: transparent;
+  text-shadow: none;
   background-image: linear-gradient(90deg, #5e5e5e 40%, #fff 60%, #5e5e5e 100%);
   width: 34%;
   height: 30%;
@@ -244,6 +246,8 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  color: white;
+  text-shadow: -1px 1px #232323;
   position: absolute;
   bottom: -45%;
   right: 30%;
@@ -280,7 +284,7 @@
     #232323 22%, #232323 23%,
     #0b3257 23%, #2e8ddb, #8ab7c9 57%,
     #232323 57%, #232323 58%,
-    white 58%, white 59%,
+    transparent 58%, transparent 59%,
     #232323 59%, #232323 60%,
     #8ab7c9 60%, #2e8ddb , #0b3257 94%,
     #232323 94%, #232323 95%,
