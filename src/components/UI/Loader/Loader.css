@@ -1,0 +1,24 @@
+.Loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: radial-gradient(transparent, #240646);
+}
+
+.Loader::after {
+  content: "";
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  border: 5px solid #b4b4b4;  
+  border-top: 5px solid #558df5;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

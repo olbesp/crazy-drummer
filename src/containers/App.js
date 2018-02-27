@@ -5,11 +5,13 @@ import Toolbar from '../components/Toolbar/Toolbar';
 import Menu from '../components/Toolbar/Menu/Menu';
 import DrumKit from './DrumKit/DrumKit';
 import Aux from '../hoc/Aux';
+import Loader from '../components/UI/Loader/Loader';
 
 class App extends Component {
   state = {
     showMenu: false,
-    activeGenre: 'rock'
+    activeGenre: 'rock',
+    loading: true
   }
 
   menuClosedHandler = () => {
@@ -28,15 +30,21 @@ class App extends Component {
     });
   }
 
+  componentDidMount() {
+    setTimeout(() => this.setState({ loading: false }), 1500);
+  }
+
   render() {
+    
     return (
+      this.state.loading ? <Loader /> :
       <Aux>
-        <Toolbar 
+        <Toolbar
           togglerClicked={this.menuToggleHandler}
           open={this.state.showMenu}
           closed={this.menuClosedHandler}
         />
-        <Menu 
+        <Menu
           open={this.state.showMenu}
           closed={this.menuClosedHandler}
           changeGenre={this.genreChangedHandler}
@@ -44,7 +52,7 @@ class App extends Component {
         />
         <DrumKit genre={this.state.activeGenre} />
       </Aux>
-    );
+    );    
   }
 }
 
