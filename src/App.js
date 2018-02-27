@@ -29,17 +29,21 @@ class App extends Component {
   }
 
   drumHitHandler = (e) => {
-    this.setState({ drumHitKeyCode: e.keyCode });
+    if ((e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode === 32) {
+      this.setState({ drumHitKeyCode: e.keyCode });
+    }
   }
 
   drumHitReleaseHandler = () => {
-    this.setState({ drumHitKeyCode: null });
+    if (this.state.drumHitKeyCode) {
+      this.setState({ drumHitKeyCode: null });
+    }
   }
 
   drumClickedDownHandler = (e) => {
-    if (e.target.textContent) {
+    if (e.target.id) {
       let keyCode;
-      switch (e.target.textContent.toLowerCase()) {
+      switch (e.target.id.toLowerCase()) {
         case 'i': keyCode = 73; break;
         case 'j': keyCode = 74; break;
         case 'k': keyCode = 75; break;
@@ -62,16 +66,19 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log('App did mount');
     document.addEventListener("keydown", this.drumHitHandler);
     document.addEventListener('keyup', this.drumHitReleaseHandler);
   }
 
   componentWillUnmount() {
+    console.log('App will unmount');
     document.removeEventListener("keydown", this.drumHitHandler);
     document.removeEventListener('keyup', this.drumHitReleaseHandler);
   }
 
   render() {
+    console.log('App render');
     return (
       <div className="App">
         <Toolbar 

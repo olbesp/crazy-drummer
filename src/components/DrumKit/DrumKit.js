@@ -20,19 +20,22 @@ const drums = [
 class DrumKit extends Component {
   
   componentDidUpdate() {
-    if (this.props.keyCode && this.props.genre) {
+    
+    if (((this.props.keyCode >= 65 && this.props.keyCode <= 90) 
+        || this.props.keyCode === 32) && this.props.genre) {
+      console.log('DrumKit update');
       const drum = library[this.props.genre][`${this.props.keyCode}`]
       if (drum) {
         drum.sound.play();
-      } else if (this.props.keyCode >= 65 && this.props.keyCode <= 90) {
-        library.effects[Math.floor(Math.random() * library.effects.length)].play();
       } else {
-        return false;
+        library.effects[Math.floor(Math.random() * library.effects.length)].play();
       }
     }
   }
 
   render() {
+    console.log('DrumKit render');
+
     const DOMdrums = drums.map((drum, index) => {
       return <Drum 
           key={index} 
