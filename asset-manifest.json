@@ -1,0 +1,20 @@
+{
+  "main.css": "static/css/main.5edc184d.css",
+  "main.css.map": "static/css/main.5edc184d.css.map",
+  "main.js": "static/js/main.1b9aeea3.js",
+  "main.js.map": "static/js/main.1b9aeea3.js.map",
+  "static/media/bark.mp3": "static/media/bark.210dd8b4.mp3",
+  "static/media/glass.mp3": "static/media/glass.626d1f99.mp3",
+  "static/media/hat1.mp3": "static/media/hat1.6406ec92.mp3",
+  "static/media/hat2.mp3": "static/media/hat2.577f1217.mp3",
+  "static/media/hat3.mp3": "static/media/hat3.ef494787.mp3",
+  "static/media/hat4.mp3": "static/media/hat4.97bdb26d.mp3",
+  "static/media/kick.mp3": "static/media/kick.c7ba4d8a.mp3",
+  "static/media/scream.mp3": "static/media/scream.5eeee4e3.mp3",
+  "static/media/sheep.mp3": "static/media/sheep.c06ece7a.mp3",
+  "static/media/snare1.mp3": "static/media/snare1.df6698ad.mp3",
+  "static/media/snare2.mp3": "static/media/snare2.f088c477.mp3",
+  "static/media/snare3.mp3": "static/media/snare3.aeff9b1d.mp3",
+  "static/media/stick.mp3": "static/media/stick.2fc8690b.mp3",
+  "static/media/wrong.mp3": "static/media/wrong.093eed4f.mp3"
+}
