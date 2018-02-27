@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import styles from './DrumKit.css';
-import Background from '../../assets/images/floor.jpeg';
 import Drum from '../../components/Drum/Drum';
 import library from '../../components/Library/Library';
 
@@ -87,10 +86,7 @@ class DrumKit extends Component {
 
     return (
       <div
-        className={styles.DrumKit} 
-        style={{
-          backgroundImage: `radial-gradient(rgba(0, 0, 0, 0), rgba(18, 12, 45, .8)), url(${Background})`
-        }}
+        className={styles.DrumKit}
         onMouseDown={this.drumClickedDownHandler}
         onMouseUp={this.drumClickedUpHandler}
       >

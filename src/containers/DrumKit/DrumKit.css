@@ -6,6 +6,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #33291d;
+  background-size: 5% 100px;
+  background-image: linear-gradient(90deg, 
+    #1a1a1a 2%, transparent 2%, transparent 96%, #80714b),
+    radial-gradient(circle, #80714b 2%, #1a1a1a 2%, #1a1a1a 4%, transparent 4%);
+}
+
+.DrumKit::after {
+  content: "";
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-image: radial-gradient(transparent 20%, #10061d);
 }
 
 .DrumsContainer {
