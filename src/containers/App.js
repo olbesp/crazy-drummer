@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Toolbar from '../components/Toolbar/Toolbar';
 import Menu from '../components/Toolbar/Menu/Menu';
-import DrumKit from './DrumKit/DrumKit';
+import Library from '../components/Library/Library';
 import Aux from '../hoc/Aux';
 import Loader from '../components/UI/Loader/Loader';
 
@@ -50,7 +50,7 @@ class App extends Component {
           changeGenre={this.genreChangedHandler}
           genre={this.state.activeGenre}
         />
-        <DrumKit genre={this.state.activeGenre} />
+        <Library genre={this.state.activeGenre} />
       </Aux>
     );    
   }

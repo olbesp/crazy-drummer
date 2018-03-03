@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import styles from './DrumKit.css';
 import Drum from '../../components/Drum/Drum';
-import library from '../../components/Library/Library';
 
 const drums = [
   { drumClass: 'Hat1', drumButton: 'i' },
@@ -20,7 +19,7 @@ class DrumKit extends Component {
   state = {
     drumKeyCode: null
   }
-  
+
   drumPressedHandler = (e) => {
     if ((e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode === 32) {
       this.setState({ drumKeyCode: e.keyCode });
@@ -66,11 +65,11 @@ class DrumKit extends Component {
   componentDidUpdate() {
     if (((this.state.drumKeyCode >= 65 && this.state.drumKeyCode <= 90) 
       || this.state.drumKeyCode === 32) && this.props.genre) {
-      const drum = library[this.props.genre][`${this.state.drumKeyCode}`]
+      const drum = this.props.library[this.props.genre][`${this.state.drumKeyCode}`]
       if (drum) {
         drum.sound.play();
       } else {
-        library.effects[Math.floor(Math.random() * library.effects.length)].play();
+        this.props.library.effects[Math.floor(Math.random() * this.props.library.effects.length)].play();
       }
     }
   }
