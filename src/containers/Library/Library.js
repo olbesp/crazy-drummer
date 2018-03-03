@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import { Howl } from 'howler';
 import axios from 'axios';
-import DrumKit from '../../containers/DrumKit/DrumKit';
-import Loader from '../UI/Loader/Loader';
+import DrumKit from '../DrumKit/DrumKit';
+import Loader from '../../components/UI/Loader/Loader';
 
 class Library extends Component {
   state = {
