@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Howl } from 'howler';
 import axios from 'axios';
 import DrumKit from '../../containers/DrumKit/DrumKit';
+import Loader from '../UI/Loader/Loader';
 
 class Library extends Component {
   state = {
@@ -45,9 +46,11 @@ class Library extends Component {
   }
 
   render() {
-    return (
-      <DrumKit genre={this.props.genre} library={this.state.library} />
-    );
+    let html = <Loader />;
+    if (this.state.library) {
+      html = <DrumKit genre={this.props.genre} library={this.state.library} />;
+    }
+    return html;
   }
 }
 

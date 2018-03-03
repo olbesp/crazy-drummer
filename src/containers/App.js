@@ -5,13 +5,11 @@ import Toolbar from '../components/Toolbar/Toolbar';
 import Menu from '../components/Toolbar/Menu/Menu';
 import Library from '../components/Library/Library';
 import Aux from '../hoc/Aux';
-import Loader from '../components/UI/Loader/Loader';
 
 class App extends Component {
   state = {
     showMenu: false,
-    activeGenre: 'rock',
-    loading: true
+    activeGenre: 'rock'
   }
 
   menuClosedHandler = () => {
@@ -30,14 +28,9 @@ class App extends Component {
     });
   }
 
-  componentDidMount() {
-    setTimeout(() => this.setState({ loading: false }), 1500);
-  }
-
   render() {
     
     return (
-      this.state.loading ? <Loader /> :
       <Aux>
         <Toolbar
           togglerClicked={this.menuToggleHandler}
