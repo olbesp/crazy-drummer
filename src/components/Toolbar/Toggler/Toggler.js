@@ -1,8 +1,7 @@
 import React from 'react';
-
 import styles from './Toggler.css';
 
-const toggler = (props) => {
+const toggler = props => {
   let classes = [
     styles.Toggler,
     styles.Close

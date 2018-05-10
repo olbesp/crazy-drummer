@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-
 import './App.css';
 import Toolbar from '../../components/Toolbar/Toolbar';
 import Menu from '../../components/Toolbar/Menu/Menu';
 import Library from '../Library/Library';
-import Aux from '../../hoc/Aux';
 
 class App extends Component {
   state = {
@@ -29,9 +27,8 @@ class App extends Component {
   }
 
   render() {
-    
     return (
-      <Aux>
+      <React.Fragment>
         <Toolbar
           togglerClicked={this.menuToggleHandler}
           open={this.state.showMenu}
@@ -44,7 +41,7 @@ class App extends Component {
           genre={this.state.activeGenre}
         />
         <Library genre={this.state.activeGenre} />
-      </Aux>
+      </React.Fragment>
     );    
   }
 }

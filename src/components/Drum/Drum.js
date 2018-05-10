@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styles from './Drum.css';
 
 const drum = props => (

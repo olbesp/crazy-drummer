@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styles from './MainHeading.css';
 
 const mainHeading = () => (

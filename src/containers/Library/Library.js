@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { Howl } from 'howler';
 import axios from 'axios';
 import DrumKit from '../DrumKit/DrumKit';
