@@ -5,46 +5,6 @@ import Drum from '../../components/Drum/Drum';
 import * as actionTypes from '../../store/actions';
 
 class DrumKit extends Component {
-  // state = {
-  //   drumKeyCode: null
-  // }
-
-  // drumPressedHandler = (e) => {
-  //   if ((e.keyCode >= 65 && e.keyCode <= 90) || e.keyCode === 32) {
-  //     this.setState({ drumKeyCode: e.keyCode });
-  //   }
-  // }
-
-  // drumPressedReleaseHandler = () => {
-  //   if (this.state.drumKeyCode) {
-  //     this.setState({ drumKeyCode: null });
-  //   }
-  // }
-
-  // drumClickedDownHandler = (e) => {
-  //   if (e.target.id) {
-  //     let keyCode;
-  //     switch (e.target.id.toLowerCase()) {
-  //       case 'i': keyCode = 73; break;
-  //       case 'j': keyCode = 74; break;
-  //       case 'k': keyCode = 75; break;
-  //       case 'l': keyCode = 76; break;
-  //       case 'w': keyCode = 87; break;
-  //       case 'a': keyCode = 65; break;
-  //       case 's': keyCode = 83; break;
-  //       case 'd': keyCode = 68; break;
-  //       case 'space': keyCode = 32; break;
-  //       default: keyCode = null;
-  //     }
-  //     this.setState({ drumKeyCode: keyCode });
-  //   }
-  // }
-
-  // drumClickedUpHandler = (e) => {
-  //   if (this.state.drumKeyCode) {
-  //     this.setState({ drumKeyCode: null });
-  //   }
-  // }
 
   componentDidMount() {
     document.addEventListener('keydown', this.props.onKeyPressed);
@@ -89,22 +49,14 @@ class DrumKit extends Component {
       />
     ));
 
-    // return (
-    //   <div
-    //     className={styles.DrumKit}
-    //     onMouseDown={this.drumClickedDownHandler}
-    //     onMouseUp={this.drumClickedUpHandler}
-    //   >
-    //     <div className={styles.DrumsContainer}>
-    //       {DOMdrums}
-    //     </div>
-    //   </div>
-    // );
-
-    return(
-      <div className={styles.DrumKit}>
+    return (
+      <div
+        className={styles.DrumKit}
+        onMouseDown={this.props.onDrumClickedDown}
+        onMouseUp={this.props.onDrumClickedUp}
+      >
         <div className={styles.DrumsContainer}>
-          {DOMdrums}
+          { DOMdrums }
         </div>
       </div>
     );
@@ -117,7 +69,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onKeyPressed: (event) => dispatch({ type: actionTypes.KEY_PRESSED, drumID: event }),
-  onKeyReleased: () => dispatch({ type: actionTypes.KEY_RELEASED })
+  onKeyReleased: () => dispatch({ type: actionTypes.KEY_RELEASED }),
+  onDrumClickedDown: (event) => dispatch({ type: actionTypes.DRUM_CLICKED_DOWN, drumID: event }),
+  onDrumClickedUp: () => dispatch({ type: actionTypes.DRUM_CLICKED_UP })
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(DrumKit);
