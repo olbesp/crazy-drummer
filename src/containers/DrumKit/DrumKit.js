@@ -64,7 +64,7 @@ class DrumKit extends Component {
 }
 
 const mapStateToProps = state => ({
-  drumKeyCode: state.drumKeyCode
+  drumKeyCode: state.drums.drumKeyCode
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -74,4 +74,4 @@ const mapDispatchToProps = dispatch => ({
   onDrumClickedUp: () => dispatch({ type: actionTypes.DRUM_CLICKED_UP })
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(DrumKit);
+export default connect(mapStateToProps, mapDispatchToProps)(DrumKit);
