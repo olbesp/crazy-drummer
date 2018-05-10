@@ -58,8 +58,13 @@ class DrumKit extends Component {
   }
 
   componentDidMount() {
-    document.addEventListener("keydown", this.drumPressedHandler);
+    document.addEventListener('keydown', this.drumPressedHandler);
     document.addEventListener('keyup', this.drumPressedReleaseHandler);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.drumPressedHandler);
+    document.removeEventListener('keyup', this.drumPressedReleaseHandler);
   }
 
   componentDidUpdate() {
@@ -75,13 +80,13 @@ class DrumKit extends Component {
   }
 
   render() {
-    const DOMdrums = drums.map((drum, index) => {
-      return <Drum 
-          key={index} 
-          drumClass={drum.drumClass} 
-          drumButton={drum.drumButton}
-        />;
-    });
+    const DOMdrums = drums.map((drum, index) => (
+      <Drum 
+        key={index} 
+        drumClass={drum.drumClass} 
+        drumButton={drum.drumButton}
+      />
+    ));
 
     return (
       <div
