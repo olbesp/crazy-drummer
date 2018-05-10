@@ -4,18 +4,6 @@ import styles from './DrumKit.css';
 import Drum from '../../components/Drum/Drum';
 import * as actionTypes from '../../store/actions';
 
-const drums = [
-  { drumClass: 'Hat1', drumButton: 'i' },
-  { drumClass: 'Hat2', drumButton: 'j' },
-  { drumClass: 'Hat3', drumButton: 'k' },
-  { drumClass: 'Hat4', drumButton: 'l' },
-  { drumClass: 'Snare1', drumButton: 'w' },
-  { drumClass: 'Snare2', drumButton: 'a' },
-  { drumClass: 'Snare3', drumButton: 's' },
-  { drumClass: 'Snare4', drumButton: 'd' },
-  { drumClass: 'Kick', drumButton: 'space' }
-];
-
 class DrumKit extends Component {
   // state = {
   //   drumKeyCode: null
@@ -81,10 +69,22 @@ class DrumKit extends Component {
   }
 
   render() {
+    const drums = [
+      { drumClass: 'Hat1', drumButton: 'i' },
+      { drumClass: 'Hat2', drumButton: 'j' },
+      { drumClass: 'Hat3', drumButton: 'k' },
+      { drumClass: 'Hat4', drumButton: 'l' },
+      { drumClass: 'Snare1', drumButton: 'w' },
+      { drumClass: 'Snare2', drumButton: 'a' },
+      { drumClass: 'Snare3', drumButton: 's' },
+      { drumClass: 'Snare4', drumButton: 'd' },
+      { drumClass: 'Kick', drumButton: 'space' }
+    ];
+
     const DOMdrums = drums.map((drum, index) => (
-      <Drum 
-        key={index} 
-        drumClass={drum.drumClass} 
+      <Drum
+        key={index}
+        drumClass={drum.drumClass}
         drumButton={drum.drumButton}
       />
     ));
