@@ -4,7 +4,7 @@ import './App.css';
 import Toolbar from '../../components/Toolbar/Toolbar';
 import Menu from '../../components/Toolbar/Menu/Menu';
 import Library from '../Library/Library';
-import * as actionTypes from '../../store/actions';
+import * as actionTypes from '../../store/actions/actionTypes';
 
 
 class App extends Component {

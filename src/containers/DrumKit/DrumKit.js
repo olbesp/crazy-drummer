@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './DrumKit.css';
 import Drum from '../../components/Drum/Drum';
-import * as actionTypes from '../../store/actions';
+import * as actions from '../../store/actions/index';
 
 class DrumKit extends Component {
 
@@ -68,10 +68,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onKeyPressed: (event) => dispatch({ type: actionTypes.KEY_PRESSED, drumID: event }),
-  onKeyReleased: () => dispatch({ type: actionTypes.KEY_RELEASED }),
-  onDrumClickedDown: (event) => dispatch({ type: actionTypes.DRUM_CLICKED_DOWN, drumID: event }),
-  onDrumClickedUp: () => dispatch({ type: actionTypes.DRUM_CLICKED_UP })
+  onKeyPressed: event => dispatch(actions.keyPressed(event)),
+  onKeyReleased: () => dispatch(actions.keyReleased()),
+  onDrumClickedDown: event => dispatch(actions.drumClickedDown(event)),
+  onDrumClickedUp: () => dispatch(actions.drumClickedUp())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(DrumKit);
