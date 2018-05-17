@@ -4,7 +4,7 @@ import './App.css';
 import Toolbar from '../../components/Toolbar/Toolbar';
 import Menu from '../../components/Toolbar/Menu/Menu';
 import Library from '../Library/Library';
-import * as actionTypes from '../../store/actions/actionTypes';
+import * as actions from '../../store/actions/genres';
 
 
 class App extends Component {
@@ -47,7 +47,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onChangeGenre: (event) => dispatch({ type: actionTypes.GENRE_CHANGED, genre: event })
+  onChangeGenre: (event) => dispatch(actions.genreChanged(event))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
