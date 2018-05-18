@@ -19,7 +19,13 @@ class Library extends Component {
     }
 
     if (this.props.error) {
-      html = <div>{this.props.error}</div>
+      const style = {
+        textAlign: 'center',
+        marginTop: '50vh',
+        fontSize: '3rem',
+        color: '#333'
+      };
+      html = <div style={style}>{this.props.error}</div>;
     }
 
     return html;
