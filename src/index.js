@@ -9,12 +9,14 @@ import App from './containers/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import drumsReducer from './store/reducers/drums';
 import genresReducer from './store/reducers/genres';
+import libraryReducer from './store/reducers/library';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
   drums: drumsReducer,
-  genres: genresReducer
+  genres: genresReducer,
+  library: libraryReducer
 });
 
 const store = createStore(
